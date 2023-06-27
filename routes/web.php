@@ -13,6 +13,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::view('/', 'home')->name('home');
+
+Route::get('/lang/{lang}', function($lang) {
+	session()->put('lang', $lang);
+
+	return back();
+})->name('language');
+
+Route::view('/about', 'about')->name('about');
+
+
