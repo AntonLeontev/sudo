@@ -2,6 +2,8 @@
 
 @section('title', __('home.title'))
 
+@section('body-class', 'main-blue')
+
 @section('content')
     <main>
 

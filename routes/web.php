@@ -22,5 +22,13 @@ Route::get('/lang/{lang}', function($lang) {
 })->name('language');
 
 Route::view('/about', 'about')->name('about');
+Route::view('/projects', 'projects')->name('projects');
+Route::view('/publications', 'publications')->name('publications');
+Route::view('/reviews', 'reviews')->name('reviews');
+Route::view('/services', 'services')->name('services');
+Route::view('/calculations', 'calculations')->name('calculations');
+Route::view('/career', 'career')->name('career');
+Route::view('/contacts', 'contacts')->name('contacts');
+Route::view('/policy', 'policy')->name('policy');
 
 

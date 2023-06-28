@@ -17,21 +17,21 @@
                     <a class="menu__link menu__link-list" href="#">{{ __('header.company') }}<i class="icon-arrow-bootom"></i></a>
                     <ul class="menu__list-2">
                         <li>
-                            <a class="menu__link" href="about.html">{{ __('header.about') }}</a>
+                            <a class="menu__link" href="{{ route('about') }}">{{ __('header.about') }}</a>
                         </li>
                         <li>
-                            <a class="menu__link" href="publications.html">{{ __('header.publications') }}</a>
+                            <a class="menu__link" href="{{ route('publications') }}">{{ __('header.publications') }}</a>
                         </li>
                         <li>
-                            <a class="menu__link" href="reviews.html">{{ __('header.reviews') }}</a>
+                            <a class="menu__link" href="{{ route('reviews') }}">{{ __('header.reviews') }}</a>
                         </li>
                     </ul>
                 </li>
-                <li class="menu__item"><a class="menu__link" href="services.html">{{ __('header.services') }}</a></li>
-                <li class="menu__item"><a class="menu__link" href="projects.html">{{ __('header.projects') }}</a></li>
-                <li class="menu__item"><a class="menu__link" href="calulations.html">{{ __('header.instruments') }}</a></li>
-                <li class="menu__item"><a class="menu__link" href="career.html">{{ __('header.career') }}</a></li>
-                <li class="menu__item"><a class="menu__link" href="contacts.html">{{ __('header.contacts') }}</a></li>
+                <li class="menu__item"><a class="menu__link" href="{{ route('services') }}">{{ __('header.services') }}</a></li>
+                <li class="menu__item"><a class="menu__link" href="{{ route('projects') }}">{{ __('header.projects') }}</a></li>
+                <li class="menu__item"><a class="menu__link" href="{{ route('calculations') }}">{{ __('header.instruments') }}</a></li>
+                <li class="menu__item"><a class="menu__link" href="{{ route('career') }}">{{ __('header.career') }}</a></li>
+                <li class="menu__item"><a class="menu__link" href="{{ route('contacts') }}">{{ __('header.contacts') }}</a></li>
             </ul>
             <ul class="menu__contact">
                 <li><a href="mailto:info@sudo.team">info@sudo.team</a></li>

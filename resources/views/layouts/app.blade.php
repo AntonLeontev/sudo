@@ -23,7 +23,7 @@
 
 </head>
 <!-- body--hidden -->
-<body class="main-blue">
+<body class="@yield('body-class')">
 
     <input type="hidden" value="1" id="helper-input">
 
