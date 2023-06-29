@@ -49,77 +49,15 @@
             </div>
         </section>
 
-        <div class="ps-100 container">
-            <div class="card-box swiper-box">
-                <div class="swiper-wrapper">
-                    <!-- Slides -->
-
-                    <div class="swiper-slide">
-                        <div class="index-block index-block--1">
-                            <div class="index-block__wrap">
-                                <span class="elem-a2 wow fadeInUp" data-wow-duration=".2s">01 - 03</span>
-                                <p class="wow fadeInUp" data-wow-duration=".5s">Обучаемые системы автоматического анализа,
-                                    расчёта и построения
-                                    оптимальных технологических маршрутов с учётом большого числа входных оперативных
-                                    параметров. Перенос вычисление на GPGPU. Оптимизация существующих решений.</p>
-                                <div class="index-block__btn-box elem-a3 wow zoomIn">
-                                    <button class="index-block__btn">Оставить заявку</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="swiper-slide">
-                        <div class="index-block index-block--color-text index-block--2">
-                            <div class="index-block__wrap">
-                                <span class="elem-a4 wow fadeInUp" data-wow-duration=".2s">02 - 03</span>
-                                <!-- <ul class="card-box__list-2 dest">
-                                        <li class="card-box__item-2">Онлайн сервис построения диаграмм кривых</li>
-                                        <li class="card-box__item-2">перемагничивания первого порядка FORC.</li>
-                                        <li class="card-box__item-2">Поддержка различного оборудования,</li>
-                                        <li class="card-box__item-2">расширенный набор пред-процессинговых и</li>
-                                        <li class="card-box__item-2">аналитических функций, высокая скорость</li>
-                                        <li class="card-box__item-2">обработки данных.</li>
-                                    </ul> -->
-                                <p class="wow fadeInUp" data-wow-duration=".5s">Онлайн сервис построения диаграмм кривых
-                                    перемагничивания первого порядка
-                                    FORC. Поддержка различного оборудования, расширенный набор пред-процессинговых и
-                                    аналитических функций, высокая скорость обработки данных.</p>
-                                <div class="index-block__btn-box elem-a5 wow zoomIn">
-                                    <button class="index-block__btn">Оставить заявку</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="swiper-slide">
-                        <div class="index-block index-block--3">
-                            <div class="index-block__wrap">
-                                <span class="elem-a6">03 - 03</span>
-                                <!-- <ul class="list-4 dest">
-                                        <li class="card-box__item-3"> Сервисы для обработки и анализа изображений</li>
-                                        <li class="card-box__item-3">со сканирующих электронных микроскопов</li>
-                                        <li class="card-box__item-3">П(SEM). Высокая точность и скорость обработки</li>
-                                        <li class="card-box__item-3">с использованием технологий машинного обучения</li>
-                                    </ul> -->
-                                <p class="wow fadeInUp" data-wow-duration=".5s">Сервисы для обработки и анализа изображений
-                                    со сканирующих электронных
-                                    микроскопов (SEM). Высокая точность и скорость обработки с использованием технологий
-                                    машинного обучения </p>
-                                <div class="index-block__btn-box elem-a7">
-                                    <button class="index-block__btn">Оставить заявку</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- If we need navigation buttons -->
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-button-next"></div>
-
-            </div>
-        </div>
+		@if (slides()->isNotEmpty())
+			<div class="ps-100 container">
+				<x-home-page-slider>
+					@foreach (slides() as $slide)
+						<x-home-page-slider.slide :$slide :position="$loop->iteration" :total="$loop->count" />
+					@endforeach
+				</x-home-page-slider>
+			</div>
+		@endif
 
         <section class="card-box index-benefits ps-40">
             <div class="index-benefits__block container">

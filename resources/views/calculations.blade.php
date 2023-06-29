@@ -4,70 +4,23 @@
 
 @section('content')
 	<main class="container mb-350 pt-50">
-        <h2 class="title-h2 mb-25 mt-dest-110">Инструменты и расчетные программы</h2>
+        <h2 class="title-h2 mb-25 mt-dest-110">{{ __('calculations.h1') }}</h2>
         <p class="calulations__text mb-37 text-justify ">
-            Одним из направлений деятельности компании «СУДО» является создание научного ПО различной направленности. Мы разработали для Вас несколько удобных и эффективных инструментов доступных на нашем сайте, и мы будем рады, если наши продукты помогут Вам расширить горизонты познания и совершить научные открытия. Будем признательны за обратную связь.
+            {{ __('calculations.text') }}
         </p>
         <div class="container-grid">
-            <div class="block block-g">
-                <div class="block-g__title">
-                    <a  target="_blank" href="http://uncorr.com/"  class="title-h3 color--blue mb-13">Uncorr <span class="hidden">- Spatial analysis and correlation</span></a>
-                    <p class="hidden-mob mt-15">  Spatial analysis and correlation</p>
-                </div>
-                <div class="flex-direction-column-table flex-dest align-items-start-dest justify-content-space-between-dest border-t h100 pt-25 mb-63">
-                    <p class="text mw-350 mb-37 text-justify ">Универсальный программный пакет для корреляционного анализа пространственных данных с дополнительным набором инструментов для выполнения преобразования географических координат, интерполяции данных, картографирования, пространственной корреляции, визуализации данных и другими вспомогательными функциями.</p>
-                        <a  target="_blank" href="http://uncorr.com/" class="btn">
-                        <span>Перейти</span>
-                        <i class="icon-enter"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="block block-g">
-                <div class="block-g__title">
-                    <a  target="_blank" href="https://forctool.com/" class="title-h3 color--blue mb-13">FORCtool <span class="hidden"> - FORC processing and analysis</span></a>
-                    <p class="hidden-mob mt-15">FORC processing and analysis</p>
-                </div>
-                <div class="flex-direction-column-table flex-dest align-items-start-dest justify-content-space-between-dest border-t h100 pt-25 mb-63">
-                    <p class="text mw-350 mb-37  text-justify ">Сервис для обработки, препроцессинга и анализа частных петель гистерезиса первого порядка FORC, а также для построения диаграмм распределения FORC. Сервис использует алгоритмы, предложенные авторами VARIFORC и FORCsensei</p>
-                    <a  target="_blank" href="https://forctool.com/" class="btn">
-                        <span>Перейти</span>
-                        <i class="icon-enter"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="block block-g">
-                <div class="block-g__title">
-                    <a  target="_blank" href="https://hysteresis.online/" class="title-h3 color--blue mb-13">Hysteresis <span class="hidden">- plotting hysteresis loops, IRM and backfield curves</span></a>
-                    <p class="hidden-mob mt-15">plotting hysteresis loops, IRM and backfield curves</p>
-                </div>
-                <div class="flex-direction-column-table flex-dest align-items-start-dest justify-content-space-between-dest border-t h100 pt-25 mb-63">
-                    <p class="text mw-350 mb-37  text-justify ">Сервис для обработки и визуализации измерений петель гистерезиса, кривых обратного перемагничивания и кривых намагничивания IRM. Поддержка файлов Princeton MicroMag 2900/3900 и LakeShore 7400 Series.</p>
-                    <a  target="_blank" href="https://hysteresis.online/" class="btn">
-                        <span>Перейти</span>
-                        <i class="icon-enter"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="block block-g">
-                <div class="block-g__title">
-                    <h3 class="title-h3 color--blue">SEMalyzer <span class="hidden"> - processing and analyzing SEM images (by request)</span></h3>
-                    <p class="hidden-mob mt-15">processing and analyzing SEM images (by request)</p>
-                </div>
-                <div class="flex-direction-column-table flex-dest align-items-start-dest justify-content-space-between-dest border-t h100 pt-25 mb-63">
-                    <p class="text mw-350 mb-37  text-justify ">Сервис для обработки и анализа изображений со сканирующих электронных микроскопов (SEM). Высокая точность и скорость обработки с использованием технологий машинного обучения </p>
-                    <button type="submit" class="btn btn-modal">
-                        <span>Перейти</span>
-                        <i class="icon-enter"></i>
-                    </button>
-                </div>
-            </div>
+            
+			@foreach (instruments() as $tool)
+				<x-tool :$tool />
+			@endforeach
+
         </div>
         <div class="mw-650 mt-85">
-            Вопросы и пожелания относительно функционала и использования представленных инструментов можно направить по адресу <a href="mailto:l.surovitskii@sudo.team">l.surovitskii@sudo.team</a> 
+            {{ __('calculations.email.text') }} <a href="mailto:{{ contacts()->tools_email }}">{{ contacts()->tools_email }}</a> 
         </div>
     </main>
 
-    <section class="modal-feedback">
+    {{-- <section class="modal-feedback">
         <button class="modal-feedback__close">
             <i class="icon-close"></i>
         </button>
@@ -108,14 +61,14 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
 @endsection
 
 @section('body_scripts')
 	<script src="libs/jquery-3.6.3.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
     <script src="js/app.js"></script>
-    <script>
+    {{-- <script>
         document.querySelector('.btn-modal').addEventListener('click', function() {
             document.querySelector('.modal-feedback').classList.add('modal-feedback--active')
         })
@@ -123,5 +76,5 @@
             document.querySelector('.modal-feedback').classList.remove  ('modal-feedback--active')
         })
 
-    </script>
+    </script> --}}
 @endsection

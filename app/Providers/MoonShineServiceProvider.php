@@ -2,6 +2,11 @@
 
 namespace App\Providers;
 
+use App\MoonShine\Resources\ContactResource;
+use App\MoonShine\Resources\HomePageSlideResource;
+use App\MoonShine\Resources\InstrumentResource;
+use App\MoonShine\Resources\PublicationResource;
+use App\MoonShine\Resources\VacancyResource;
 use Illuminate\Support\ServiceProvider;
 use MoonShine\MoonShine;
 use MoonShine\Menu\MenuGroup;
@@ -23,8 +28,20 @@ class MoonShineServiceProvider extends ServiceProvider
                     ->icon('bookmark'),
             ])->translatable(),
 
-            MenuItem::make('Documentation', 'https://laravel.com')
-                ->badge(fn() => 'Check'),
+            MenuItem::make('Слайды на главной', HomePageSlideResource::class)
+                ->icon('heroicons.rectangle-stack'),
+			
+			MenuItem::make('Публикации', PublicationResource::class)
+                ->icon('heroicons.book-open'),
+
+			MenuItem::make('Инструменты', InstrumentResource::class)
+                ->icon('heroicons.rocket-launch'),
+
+			MenuItem::make('Вакансии', VacancyResource::class)
+                ->icon('heroicons.user-plus'),
+
+			MenuItem::make('Контакты', ContactResource::class)
+                ->icon('heroicons.at-symbol'),
         ]);
     }
 }

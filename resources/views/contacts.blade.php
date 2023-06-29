@@ -6,13 +6,26 @@
 	<main class="pt-50">
 
         <section class="container mb-140 ">
-            <h2 class="title-h2 mb-25 mt-dest-110">Контакты</h2>
+            <h2 class="title-h2 mb-25 mt-dest-110">{{ __('contacts.h1') }}</h2>
             <div class="block">
                 <div>
                     <ul class="contacts__adress">
-                        <li><a href="mailto:info@sudo.team">info@sudo.team</a></li>
-                        <li>г. Санкт-Петербург, ул. Нахимова, 20</li>
-                        <li>ИНН: 7801646991</li>
+						@unless (empty(contacts()->email))
+                        	<li><a href="mailto:info@sudo.team">{{ contacts()->email }}</a></li>
+						@endunless
+
+						@php
+							$address = 'address_' . app()->getLocale();
+						@endphp
+
+						@unless (empty(contacts()->{$address}))
+							<li>{{ contacts()->{$address} }}</li>
+						@endunless
+
+						@unless (empty(contacts()->inn))
+                        	<li>{{ __('contacts.inn') }}: {{ contacts()->inn }}</li>
+						@endunless
+
                     </ul>
                 </div>
                 <div>

@@ -7,7 +7,7 @@ return [
 	'reviews' => 'Reviews',
 	'services' => 'Services',
 	'projects' => 'Projects',
-	'instruments' => 'Instruments',
+	'instruments' => 'Tools',
 	'career' => 'Career',
 	'contacts' => 'Contacts',
 	'search' => 'Search...',

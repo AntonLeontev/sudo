@@ -83,17 +83,16 @@
 .index-block {
     min-height: 582px;
     margin-bottom: 50px;
+	background-repeat: no-repeat;
+	background-size: cover;
     &--1 {
         background-image: url('/resources/images/jpg/bg_main-2.jpg');
-        background-repeat: no-repeat;
     }
     &--2 {
         background-image: url('/resources/images/jpg/bg_main-3.jpg');
-        background-repeat: no-repeat;
     }
     &--3 {
         background-image: url('/resources/images/jpg/bg_main-4.jpg');
-        background-repeat: no-repeat;
     }
 
     &__wrap {
@@ -118,6 +117,7 @@
         font-size: 16px;
         line-height: 137%;
         letter-spacing: 0.02em;
+		white-space: pre-line;
         color: #FFFFFF;
     }
     &__btn-box {
