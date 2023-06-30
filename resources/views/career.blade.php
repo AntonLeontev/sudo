@@ -35,10 +35,13 @@
                 </div>
                 <div>
                     <form class="form">
-                        <input class="form__input" name="{{ __('career.form.contact') }}" type="text" placeholder="Контактное лицо">
-                        <input class="form__input" name="{{ __('career.form.phone') }}" type="tel" placeholder="Телефон">
-                        <input class="form__input" name="Email" type="email" placeholder="Email">
-                        <textarea class="form__textarea" name="Описание проекта" placeholder="{{ __('career.form.text') }}"></textarea>
+						@csrf
+						<input type="hidden" name="to" value="{{ contacts()->resume_email }}">
+						<input type="hidden" name="subject" value="Резюме">
+                        <input class="form__input" name="name" type="text" placeholder="{{ __('career.form.contact') }}">
+                        <input class="form__input" name="phone" type="tel" placeholder="{{ __('career.form.phone') }}">
+                        <input class="form__input" name="email" type="email" placeholder="Email">
+                        <textarea class="form__textarea" name="description" placeholder="{{ __('career.form.text') }}"></textarea>
                         <label class="form__checkbox">
                             <input class="form__input--none" type="checkbox">
                             <span class="form__checkbox-elem"></span>
@@ -65,7 +68,7 @@
                 <div class="modal-body d-flex justify-content-center align-items-center">
                     <div class="thank-modal__content">
                         <p class="thank-modal__text w-75 m-auto h2 pb-3 px-4 text-center">
-                            Спасибо, Ваша заявка принята!
+                            {{ __('career.form.thanks') }}
                         </p>
                     </div>
                 </div>

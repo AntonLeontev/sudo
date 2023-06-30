@@ -10,18 +10,18 @@
         <section class="hero card-box card-box--active">
             <div class="hero__wrap ps-40">
 
-                <h1 class="mob">Разработка высокотехнологичных программных продуктов</h1>
+                <h1 class="mob">{{ __('home.h1.mob') }}</h1>
 
                 <h1 class="tab dest">
-                    <span class="hero__title">Разработка</span>
-                    <span class="hero__title">высокотехнологичных</span>
-                    <span class="hero__title">программных продуктов</span>
+                    <span class="hero__title">{{ __('home.h1.1') }}</span>
+                    <span class="hero__title">{{ __('home.h1.2') }}</span>
+                    <span class="hero__title">{{ __('home.h1.3') }}</span>
                 </h1>
 
-                <span class="hero__elem mob">вниз</span>
+                <span class="hero__elem mob">{{ __('home.down') }}</span>
                 <div class="hero__el dest-f ps-40">
                     <span class="hero__el--arrow"></span>
-                    <span class="hero__el--text">вниз</span>
+                    <span class="hero__el--text">{{ __('home.down') }}</span>
                 </div>
             </div>
             <div class="hero__img d-none-f">
@@ -33,16 +33,14 @@
         <section class="card-box index-about ps-40">
             <div class="index-about__wrap">
                 <div class="index-about__block-one">
-                    <h2>Судо – быстрое решение для сложных вычислительных процессов </h2>
+                    <h2>{{ __('home.subtitle') }}</h2>
                 </div>
                 <div class="index-about__block-two">
                     <p>
-                        ООО «Судо» – IT-компания, основным видом деятельности которой является разработка программных
-                        продуктов. Наша специализация – разработка высокотехнологичных программ, оптимизация и ускорение
-                        сложных математических алгоритмов.
+                        {{ __('home.text') }}
                     </p>
-                    <a class="btn btn--white elem-a1 wow fadeInUp" href="about.html">
-                        <span>Узнать больше</span>
+                    <a class="btn btn--white elem-a1 wow fadeInUp" href="{{ route('about') }}">
+                        <span>{{ __('home.more') }}</span>
                         <i class="icon-enter"></i>
                     </a>
                 </div>
@@ -62,7 +60,7 @@
         <section class="card-box index-benefits ps-40">
             <div class="index-benefits__block container">
                 <div class="index-benefits__block-1">
-                    <h3 class="index-benefits__title">Наши преимущества</h3>
+                    <h3 class="index-benefits__title">{{ __('home.advantages.title') }}</h3>
                 </div>
                 <div class="index-benefits__block-2">
                     <div class="wave-block dest">
@@ -85,16 +83,9 @@
                         </ul>
                     </div>
                     <ul class="index-benefits__list">
-                        <li class="index-benefits__item wow fadeInUp" data-wow-delay=".5s" data-wow-duration=".5s">Мы имеем
-                            собственный парк высокопроизводительного серверного
-                            оборудования, а также используем удалённые арендованные аппаратные мощности</li>
-                        <li class="index-benefits__item wow fadeInUp" data-wow-delay=".5s" data-wow-duration="1s">Для
-                            достижения высокой производительности мы не только
-                            оптимизируем код для центральных процессоров, но также эффективно переносим вычисления на
-                            графические процессоры</li>
-                        <li class="index-benefits__item wow fadeInUp" data-wow-delay=".5s" data-wow-duration="1.5s">Мы
-                            создаём онлайн сервисы, ориентированные на решение научных
-                            задач, бесплатно предоставляемые исследователям, инженерам и студентам</li>
+                        <li class="index-benefits__item wow fadeInUp" data-wow-delay=".5s" data-wow-duration=".5s">{{ __('home.advantages.1') }}</li>
+                        <li class="index-benefits__item wow fadeInUp" data-wow-delay=".5s" data-wow-duration="1s">{{ __('home.advantages.2') }}</li>
+                        <li class="index-benefits__item wow fadeInUp" data-wow-delay=".5s" data-wow-duration="1.5s">{{ __('home.advantages.3') }}</li>
                     </ul>
                 </div>
             </div>
@@ -103,9 +94,9 @@
         <section class="card-box index-services ps-40">
             <div class="index-services__block container">
                 <div class="index-services__block-1">
-                    <h3 class="color--white mb-28">Услуги</h3>
-                    <a class="btn btn--white border-color wow fadeInUp" href="services.html">
-                        <span class="color--white">Узнать больше</span>
+                    <h3 class="color--white mb-28">{{ __('home.services.title') }}</h3>
+                    <a class="btn btn--white border-color wow fadeInUp" href="{{ route('services') }}">
+                        <span class="color--white">{{ __('home.more') }}</span>
                         <i class="icon-enter"></i>
                     </a>
                 </div>
@@ -126,27 +117,16 @@
 
                     <ul class="services-block__list">
                         <li class="services-block__item services-block__item--active color--white">
-                            <h4 class="color--white wow fadeInUp">Проектирование</h4>
-                            <p class="color--white wow fadeInUp">Идея – основа любого продукта. При проектировании продукта
-                                наша опытная команда поможет
-                                сформулировать идею, предложит интересные решения, вместе сформируем ТЗ и предоставим
-                                готовый проект</p>
+                            <h4 class="color--white wow fadeInUp">{{ __('home.services.1.title') }}</h4>
+                            <p class="color--white wow fadeInUp">{{ __('home.services.1.text') }}</p>
                         </li>
                         <li class="services-block__item color--white">
-                            <h4 class="color--white wow fadeInUp">Разработка</h4>
-                            <p class="color--white wow fadeInUp">В разработке мы используем гибкие методологии, оптимальные
-                                решения, передовые технологии
-                                и корректировки в процессе создания, поэтому проект остается живым в процессе
-                                реализации. Мы остаёмся с вами на связи на каждом этапе разработки для достижения
-                                лучшего результата</p>
+                            <h4 class="color--white wow fadeInUp">{{ __('home.services.2.title') }}</h4>
+                            <p class="color--white wow fadeInUp">{{ __('home.services.2.text') }}</p>
                         </li>
                         <li class="services-block__item color--white">
-                            <h4 class="color--white wow fadeInUp">Исследования</h4>
-                            <p class="color--white wow fadeInUp">Исследовательская деятельность – наше тайное оружие. Мы
-                                сохраняем первенство в
-                                использовании наукоёмких технологий на практике, постоянно участвуем в научных и
-                                инженерных исследованиях, в нашем штате работают действующие сотрудники топовых
-                                российских и зарубежных ВУЗов. Также обеспечиваем поддержку в развитии студентов</p>
+                            <h4 class="color--white wow fadeInUp">{{ __('home.services.3.title') }}</h4>
+                            <p class="color--white wow fadeInUp">{{ __('home.services.3.text') }}</p>
                         </li>
                     </ul>
                 </div>
@@ -158,14 +138,12 @@
                 <div>
                     <div class="index-mission__text-animate">
                         <img class="index-mission__text-animate--1 anime-9" src="{{ Vite::asset('resources/images/svg/text.svg') }}" alt="">
-                        <a class="index-mission__text-animate--2" href="career.html">
+                        <a class="index-mission__text-animate--2" href="{{ route('career') }}">
                             <img src="{{ Vite::asset('resources/images/png/play.png') }}" alt="">
                         </a>
                     </div>
                     <p class="index-mission__text wow fadeInUp">
-                        Наша команда – наша ценность, поэтому мы создаём лучшие условия для работы каждого сотрудника.
-                        Присоединяйтесь к нашей команде, чтобы заниматься решением сложных, но интересных задач и
-                        развиваться вместе.
+                        {{ __('home.career.text') }}
                     </p>
                 </div>
                 <div>

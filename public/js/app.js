@@ -52,11 +52,12 @@ document.addEventListener('DOMContentLoaded', () => {
         let th = $(this);
         $.ajax({
             type: "POST",
-            url: "mail.php",
+            url: "/send-mail",
             data: th.serialize(),
-            success: function(data) {
+            success: function (data) {
                 th.trigger("reset");
-            }
+				console.log(data);
+            },
         });
         return false;
     });

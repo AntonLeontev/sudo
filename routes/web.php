@@ -1,6 +1,7 @@
 <?php
 
-use App\Http\Controllers\HomePageController;
+use App\Mail\FormSubmit;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -31,5 +32,11 @@ Route::view('/calculations', 'calculations')->name('calculations');
 Route::view('/career', 'career')->name('career');
 Route::view('/contacts', 'contacts')->name('contacts');
 Route::view('/policy', 'policy')->name('policy');
+
+Route::post('/send-mail', function() {
+	Mail::to(request()->to)->send(new FormSubmit(request()->subject));
+
+	return response()->json('ok');
+});
 
 
