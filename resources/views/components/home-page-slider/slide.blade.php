@@ -18,7 +18,7 @@
 				{{ $slide->{$text} }}
 			</p>
             <div class="index-block__btn-box elem-a3 wow zoomIn">
-                <button class="index-block__btn">Оставить заявку</button>
+                <button class="index-block__btn">{{ __('home.slide-button') }}</button>
             </div>
         </div>
     </div>
