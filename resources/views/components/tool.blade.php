@@ -9,21 +9,23 @@
 <div class="block-g block">
     <div class="block-g__title">
 		@if (empty($tool->link))
-			<span target="_blank" href="{{ $tool->link }}" class="title-h3 color--blue mb-13">{{ $tool->{$title} }}
+			<div class="title-h3 color--blue">{{ $tool->{$title} }}
 				<span class="hidden">- {{ $tool->{$subtitle} }}</span>
-			</span>
+			</div>
 		@else
-			<a target="_blank" href="{{ $tool->link }}" class="title-h3 color--blue mb-13">{{ $tool->{$title} }}
-				<span class="hidden">- {{ $tool->{$subtitle} }}</span>
-			</a>
+			<div class="title-h3 color--blue">
+				<a target="_blank" href="{{ $tool->link }}" class="color--blue">{{ $tool->{$title} }}
+					<span class="hidden">- {{ $tool->{$subtitle} }}</span>
+				</a>
+			</div>
 		@endif
         <p class="hidden-mob mt-15"> {{ $tool->{$subtitle} }}</p>
     </div>
     <div
         class="flex-direction-column-table flex-dest align-items-start-dest justify-content-space-between-dest h100 pt-25 mb-63 border-t">
-        <p class="text mw-350 mb-37 text-justify">
-			{{ $tool->{$description} }}
-		</p>
+        <div class="text mb-37 text-justify">
+			{!! $tool->{$description} !!}
+		</div>
 
 		@unless (empty($tool->link))
 			<a target="_blank" href="{{ $tool->link }}" class="btn">

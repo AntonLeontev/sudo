@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', __('policy.title'))
+@section('title', __('calculations.title'))
 
 @section('content')
 	<main class="container mb-350 pt-50">
@@ -9,15 +9,27 @@
             {{ __('calculations.text') }}
         </p>
         <div class="container-grid">
-            
-			@foreach (instruments() as $tool)
-				<x-tool :$tool />
+			@php
+				$title = 'title_' . app()->getLocale();
+			@endphp
+
+			@foreach (instruments() as $category)
+				<div class="calculations__category-title">
+					{{ $category->first()->category->{$title} }}
+				</div>
+
+				@foreach ($category as $tool)
+					<x-tool :$tool />
+				@endforeach
 			@endforeach
+            
 
         </div>
-        <div class="mw-650 mt-85">
-            {{ __('calculations.email.text') }} <a href="mailto:{{ contacts()->tools_email }}">{{ contacts()->tools_email }}</a> 
-        </div>
+		@if (! empty(contacts()->tools_email))
+			<div class="mw-650 mt-85">
+				{{ __('calculations.email.text') }} <a href="mailto:{{ contacts()->tools_email }}">{{ contacts()->tools_email }}</a> 
+			</div>
+		@endif
     </main>
 
     {{-- <section class="modal-feedback">

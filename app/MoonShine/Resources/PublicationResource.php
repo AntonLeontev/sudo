@@ -136,4 +136,9 @@ class PublicationResource extends Resource
 	{
 		Cache::delete('publications');
 	}
+
+	protected function afterDeleted(Model $item)
+	{
+		Cache::delete('publications');
+	}
 }

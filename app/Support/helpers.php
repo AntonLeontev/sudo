@@ -68,7 +68,9 @@ if (! function_exists('instruments')) {
 
 		$instruments = Instrument::query()
 			->where('enabled', 1)
-			->get();
+			->with('category')
+			->get()
+			->groupBy('category_id');
 
 		cache(['instruments' => $instruments]);
 
