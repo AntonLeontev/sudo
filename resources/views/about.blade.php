@@ -58,7 +58,10 @@
             <div class="container index-mission__block ret-1">
                 <div class="index-mission__flex">
                     <div class="index-mission__text-animate">
-                        <img class="index-mission__text-animate--1 anime-9" src="{{ Vite::asset('resources/images/svg/text.svg') }}" alt="">
+						@php
+							$locale = app()->getLocale();
+						@endphp
+                        <img class="index-mission__text-animate--1 anime-9" src="{{ Vite::asset("resources/images/svg/text_{$locale}.svg") }}" alt="">
                         <a class="index-mission__text-animate--2" href="{{ route('career') }}">
                             <img src="{{ Vite::asset('resources/images/png/play.png') }}" alt="">
                         </a>
