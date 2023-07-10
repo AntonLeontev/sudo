@@ -13,7 +13,7 @@
 				{{ $publication->{$title} }}
 			</div>
 		@else
-			<a target="_blank" href="{{ $publication->title_link ?? $publication->button_link }}" class="publications__link">
+			<a target="_blank" href="{{ $publication->title_link ?? $publication->button_link }}" class="publications__link" rel="nofollow">
 				{{ $publication->{$title} }}
 			</a>
 		@endif
@@ -30,7 +30,7 @@
 			</p>
         </div>
 		@if (! empty($publication->button_link))
-			<a target="_blank" href="{{ $publication->button_link }}" class="btn">
+			<a target="_blank" href="{{ $publication->button_link }}" class="btn" rel="nofollow">
 				<span>{{ __('publications.publication.button') }}</span>
 				<i class="icon-enter"></i>
 			</a>

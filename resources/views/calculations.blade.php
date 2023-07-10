@@ -3,33 +3,48 @@
 @section('title', __('calculations.title'))
 
 @section('content')
-	<main class="container mb-350 pt-50">
+    <main class="mb-350 pt-50 container">
         <h2 class="title-h2 mb-25 mt-dest-110">{{ __('calculations.h1') }}</h2>
-        <p class="calulations__text mb-37 text-justify ">
+        <p class="calulations__text mb-37 text-justify">
             {{ __('calculations.text') }}
         </p>
         <div class="container-grid">
-			@php
-				$title = 'title_' . app()->getLocale();
-			@endphp
+            @php
+                $title = 'title_' . app()->getLocale();
+            @endphp
 
-			@foreach (instruments() as $category)
-				<div class="calculations__category-title">
-					{{ $category->first()->category->{$title} }}
-				</div>
 
-				@foreach ($category as $tool)
-					<x-tool :$tool />
+
+			<div id="accordionFlushExample" class="accordion accordion-flush">
+				@foreach (instruments() as $category)
+					<div class="accordion-item">
+						<h2 class="accordion-header">
+							<button class="accordion-button collapsed calculations__category-title" type="button" data-bs-toggle="collapse"
+								data-bs-target="#flush-collapse{{ $loop->index }}" aria-expanded="false" aria-controls="flush-collapseOne">
+								{{ $category->first()->category->{$title} }}
+							</button>
+						</h2>
+						<div id="flush-collapse{{ $loop->index }}" class="accordion-collapse collapse">
+							<div class="accordion-body">
+								@foreach ($category as $tool)
+									<x-tool :$tool />
+								@endforeach
+							</div>
+						</div>
+					</div>
 				@endforeach
-			@endforeach
-            
+				
+            </div>
+
+
 
         </div>
-		@if (! empty(contacts()->tools_email))
-			<div class="mw-650 mt-85">
-				{{ __('calculations.email.text') }} <a href="mailto:{{ contacts()->tools_email }}">{{ contacts()->tools_email }}</a> 
-			</div>
-		@endif
+        @if (!empty(contacts()->tools_email))
+            <div class="mw-650 mt-85">
+                {{ __('calculations.email.text') }} <a
+                    href="mailto:{{ contacts()->tools_email }}">{{ contacts()->tools_email }}</a>
+            </div>
+        @endif
     </main>
 
     {{-- <section class="modal-feedback">
@@ -77,8 +92,10 @@
 @endsection
 
 @section('body_scripts')
-	<script src="libs/jquery-3.6.3.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    <script src="libs/jquery-3.6.3.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous">
+    </script>
     <script src="js/app.js"></script>
     {{-- <script>
         document.querySelector('.btn-modal').addEventListener('click', function() {
