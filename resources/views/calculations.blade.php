@@ -13,20 +13,18 @@
                 $title = 'title_' . app()->getLocale();
             @endphp
 
-
-
 			<div id="accordionFlushExample" class="accordion accordion-flush">
 				@foreach (instruments() as $category)
 					<div class="accordion-item">
 						<h2 class="accordion-header">
 							<button class="accordion-button collapsed calculations__category-title" type="button" data-bs-toggle="collapse"
 								data-bs-target="#flush-collapse{{ $loop->index }}" aria-expanded="false" aria-controls="flush-collapseOne">
-								{{ $category->first()->category->{$title} }}
+								{{ $category->{$title} }}
 							</button>
 						</h2>
 						<div id="flush-collapse{{ $loop->index }}" class="accordion-collapse collapse">
 							<div class="accordion-body">
-								@foreach ($category as $tool)
+								@foreach ($category->enabledInstruments as $tool)
 									<x-tool :$tool />
 								@endforeach
 							</div>

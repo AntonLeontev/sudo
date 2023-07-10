@@ -1,11 +1,12 @@
 <?php
 
+use App\Models\Category;
 use App\Models\Contact;
 use App\Models\HomePageSlide;
 use App\Models\Instrument;
 use App\Models\Publication;
 use App\Models\Vacancy;
-use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Support\Collection;
 
 if (! function_exists('slides')) {
 	function slides(): Collection
@@ -66,11 +67,11 @@ if (! function_exists('instruments')) {
 			return cache('instruments');
 		}
 
-		$instruments = Instrument::query()
-			->where('enabled', 1)
-			->with('category')
-			->get()
-			->groupBy('category_id');
+		$instruments = Category::query()
+			->with('enabledInstruments')
+			->whereHas('enabledInstruments')
+			->orderBy('position')
+			->get();
 
 		cache(['instruments' => $instruments]);
 

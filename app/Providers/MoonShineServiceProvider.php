@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\MoonShine\Resources\CategoryResource;
 use App\MoonShine\Resources\ContactResource;
 use App\MoonShine\Resources\HomePageSlideResource;
 use App\MoonShine\Resources\InstrumentResource;
@@ -31,6 +32,9 @@ class MoonShineServiceProvider extends ServiceProvider
 			
 			MenuItem::make('Публикации', PublicationResource::class)
                 ->icon('heroicons.book-open'),
+
+			MenuItem::make('Категории', CategoryResource::class)
+                ->icon('app'),
 
 			MenuItem::make('Инструменты', InstrumentResource::class)
                 ->icon('heroicons.rocket-launch'),

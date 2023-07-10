@@ -13,10 +13,12 @@ use MoonShine\Decorations\Grid;
 use MoonShine\Decorations\Heading;
 use MoonShine\Fields\BelongsTo;
 use MoonShine\Fields\ID;
+use MoonShine\Fields\Number;
 use MoonShine\Fields\SwitchBoolean;
 use MoonShine\Fields\Text;
 use MoonShine\Fields\TinyMce;
 use MoonShine\Fields\Url;
+use MoonShine\Filters\BelongsToFilter;
 use MoonShine\Resources\Resource;
 
 class InstrumentResource extends Resource
@@ -32,13 +34,16 @@ class InstrumentResource extends Resource
 	public function fields(): array
 	{
 		return [
-		    ID::make()->sortable(),
+			Number::make('Позиция в категории', 'position')
+				->sortable()
+				->hideOnForm(),
 			Grid::make([
 				Column::make([
 
 					Block::make([
 						Heading::make('Русский'),
 						Text::make('Название', 'title_ru')
+							->sortable()
 							->required(),
 						Text::make('Подзаголовок', 'subtitle_ru'),
 						TinyMce::make('Описание', 'description_ru')
@@ -66,6 +71,10 @@ class InstrumentResource extends Resource
 
 				Column::make([
 					Block::make([
+						Number::make('Позиция в категории', 'position')
+							->hideOnIndex()
+							->default(Instrument::max('position') + 1)
+							->required(),
 						Url::make('Ссылка', 'link')
 							->copy()
 							->hideOnIndex(),
@@ -91,6 +100,7 @@ class InstrumentResource extends Resource
 			'description_en' => ['nullable', 'string', 'max:2000'],
 			'link' => ['nullable', 'string', 'max:255', 'url'],
 			'enabled' => ['nullable', 'boolean'],
+			'position' => ['required', 'integer'],
 		];
     }
 
@@ -101,7 +111,9 @@ class InstrumentResource extends Resource
 
     public function filters(): array
     {
-        return [];
+        return [
+			BelongsToFilter::make('Категория','category_id', 'title_ru'),
+		];
     }
 
     public function actions(): array

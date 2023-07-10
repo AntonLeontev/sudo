@@ -23,6 +23,7 @@ class InstrumentSeeder extends Seeder
 			'link' => 'https://uncorr.com/',
 			'enabled' => 1,
 			'category_id' => 1,
+			'position' => 1,
 		]);
         Instrument::create([
 			'title_ru' => 'FORCtool',
@@ -34,6 +35,7 @@ class InstrumentSeeder extends Seeder
 			'link' => 'https://forctool.com/',
 			'enabled' => 1,
 			'category_id' => 1,
+			'position' => 2,
 		]);
         Instrument::create([
 			'title_ru' => 'Hysteresis',
@@ -45,6 +47,7 @@ class InstrumentSeeder extends Seeder
 			'link' => 'https://hysteresis.online/',
 			'enabled' => 1,
 			'category_id' => 1,
+			'position' => 3,
 		]);
         Instrument::create([
 			'title_ru' => 'SEMalyzer',
@@ -56,6 +59,7 @@ class InstrumentSeeder extends Seeder
 			'link' => '',
 			'enabled' => 1,
 			'category_id' => 1,
+			'position' => 4,
 		]);
     }
 }

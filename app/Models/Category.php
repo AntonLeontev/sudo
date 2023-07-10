@@ -19,4 +19,9 @@ class Category extends Model
 	{
 		return $this->hasMany(Instrument::class);
 	}
+	
+	public function enabledInstruments(): HasMany
+	{
+		return $this->hasMany(Instrument::class)->where('enabled', 1)->orderBy('position');
+	}
 }
