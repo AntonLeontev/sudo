@@ -169,7 +169,7 @@
     &__link {
         font-weight: 700;
         font-size: 24px;
-        line-height: 120%;
+        // line-height: 120%;
         letter-spacing: 0.02em;
         color: #FFFFFF;
         transition-duration: .5s;
@@ -197,6 +197,11 @@
             letter-spacing: 0.02em;
 
             color: #FFFFFF;
+			transition: .5s;
+
+			&:hover {
+				color: #2b5dff;
+			}
         }
         &--active {
             display: block;
