@@ -34,7 +34,7 @@
                 <li class="menu__item"><a class="menu__link" href="{{ route('contacts') }}">{{ __('header.contacts') }}</a></li>
             </ul>
             <ul class="menu__contact">
-                <li><a href="mailto:info@sudo.team">info@sudo.team</a></li>
+                <li><a href="mailto:{{ contacts()->email }}">{{ contacts()->email }}</a></li>
             </ul>
         </nav>
 
@@ -42,21 +42,22 @@
             <i class="icon-search"></i>
         </button>
         <div class="header__lang lang">
-            <button class="lang__btn">{{ strtoupper(app()->getLocale()) }}<i class="icon-arrow-bootom"></i></button>
-            <ul class="lang__list">
+            {{-- <button class="lang__btn">{{ strtoupper(app()->getLocale()) }}<i class="icon-arrow-bootom"></i></button> --}}
+			@php
+				if (app()->getLocale() === 'en') {
+					$lang = 'ru';
+				} else {
+					$lang = 'en';
+				}
+			@endphp
+			<a href="{{ route('language', $lang) }}">
+				{{ strtoupper($lang) }}
+			</a>
+            {{-- <ul class="lang__list">
                 <li>
-					@php
-						if (app()->getLocale() === 'en') {
-							$lang = 'ru';
-						} else {
-							$lang = 'en';
-						}
-					@endphp
-					<a href="{{ route('language', $lang) }}">
-						{{ strtoupper($lang) }}
-					</a>
+					
 				</li>
-            </ul>
+            </ul> --}}
         </div>
 
         <div class="header__search search">

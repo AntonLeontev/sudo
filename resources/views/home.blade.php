@@ -137,7 +137,12 @@
             <div class="index-mission__block ret-1 container">
                 <div>
                     <div class="index-mission__text-animate">
-                        <img class="index-mission__text-animate--1 anime-9" src="{{ Vite::asset('resources/images/svg/text.svg') }}" alt="">
+						@php
+							$lang = app()->getLocale();
+						@endphp
+                        <img class="index-mission__text-animate--1 anime-9" 
+							src="{{ Vite::asset("resources/images/svg/text_{$lang}.svg") }}" alt=""
+						/>
                         <a class="index-mission__text-animate--2" href="{{ route('career') }}">
                             <img src="{{ Vite::asset('resources/images/png/play.png') }}" alt="">
                         </a>
@@ -174,7 +179,7 @@
                 <span class="form__checkbox-elem"></span>
                 <span class="form__checkbox-text text-justify">
                     Нажимая кнопку Отправить, я даю согласие на обработку моих персональных данных и соглашаюсь с <a
-                        href="agreement.html">Политикой конфиденциальности</a>
+                        href="{{ route('policy') }}">Политикой конфиденциальности</a>
                 </span>
             </label>
             <button class="form__btn btn" data-bs-toggle="modal" data-bs-target="#thankYouModal" type="submit">

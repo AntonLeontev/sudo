@@ -1,7 +1,7 @@
 <footer class="footer ps-40">
     <div class="footer__wrap">
         <div class="footer__block">
-            <a class="logo footer__logo" href="#">
+            <a class="logo footer__logo" href="/">
                 <img src="{{ Vite::asset('resources/images/svg/logo.svg') }}" alt="лого">
             </a>
 
@@ -24,7 +24,7 @@
             </ul>
 
             <ul class="footer__contact">
-                <li><a href="mailto:info@sudo.team">info@sudo.team</a></li>
+                <li><a href="mailto:{{ contacts()->email }}">{{ contacts()->email }}</a></li>
             </ul>
         </div>
         <p class="footer__copyright">{{ __('footer.copyright') }}</p>

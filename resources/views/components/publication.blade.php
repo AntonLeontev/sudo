@@ -6,7 +6,7 @@
 	$description = 'description_' . app()->getLocale();
 @endphp
 
-<div class="publications__block">
+<article class="publications__block">
     <div class="publications__block-1">
 		@if (empty($publication->title_link) && empty($publication->button_link))
 			<div class="publications__link">
@@ -16,6 +16,9 @@
 			<a target="_blank" href="{{ $publication->title_link ?? $publication->button_link }}" class="publications__link">
 				{{ $publication->{$title} }}
 			</a>
+		@endif
+		@if (! empty($publication->journal))
+			<div class="mt-2 fs-6">{{ $publication->journal }}</div>
 		@endif
     </div>
     <div class="publications__block-2">
@@ -33,4 +36,4 @@
 			</a>
 		@endif
     </div>
-</div>
+</article>

@@ -17,6 +17,7 @@ class Publication extends Model
 		'description_ru',
 		'description_en',
 		'date',
+		'journal',
 		'title_link',
 		'button_link',
 		'position'

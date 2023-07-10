@@ -54,6 +54,8 @@ class PublicationResource extends Resource
 							])->columnSpan(6)
 						]),
 
+						Text::make('Журнал или конференция', 'journal'),
+
 						Url::make('Ссылка кнопки', 'button_link')
 							->expansion('url')
 							->copy()
@@ -104,6 +106,7 @@ class PublicationResource extends Resource
 			'author_en' => ['nullable', 'string', 'max:255'],
 			'description_ru' => ['nullable', 'string', 'max:1000'],
 			'description_en' => ['nullable', 'string', 'max:1000'],
+			'journal' => ['nullable', 'string', 'max:255'],
 			'button_link' => ['nullable', 'string', 'max:255'],
 			'title_link' => ['nullable', 'string', 'max:255'],
 			'date' => ['nullable', 'date'],

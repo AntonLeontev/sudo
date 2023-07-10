@@ -34,49 +34,60 @@
 .lang {
     position: relative;
     margin-right: 40px;
-    &__btn {
-        display: flex;
-        align-items: center;
-        position: relative;
-        font-weight: 500;
-        font-size: 16px;
-        line-height: 130%;
-        letter-spacing: 0.03em;
-        color: #FFFFFF;
-        transition-duration: .5s;
-        i {
-            font-size: 6px;
-            margin-left: 8px;
-            transition-duration: .5s;
-        }
-        &:hover,
-        &:focus {
-            color: #2b5dff;
-        }
-        &:active{   
-            color: #6782dd;
-        }
-        &:hover i,
-        &:focus i{
-            color: #2b5dff;
-        }
-        &:active i{
-            color: #6782dd;
-        }
-    }
-    &__list {
-        position: absolute;
-        height: 0;
-        overflow: hidden;
-        // transition-duration: .5s;
-        button {
-            font-weight: 500;
-            font-size: 16px;
-            line-height: 130%;
-            letter-spacing: 0.03em;
-            color: #585656;
-        }
-    }
+
+	a {
+		color: #fff;
+		font-weight: 600;
+		transition: color .5s ease;
+
+		&:hover {
+			color: #2b5dff;
+		}
+	}
+
+    // &__btn {
+    //     display: flex;
+    //     align-items: center;
+    //     position: relative;
+    //     font-weight: 500;
+    //     font-size: 16px;
+    //     line-height: 130%;
+    //     letter-spacing: 0.03em;
+    //     color: #FFFFFF;
+    //     transition-duration: .5s;
+    //     i {
+    //         font-size: 6px;
+    //         margin-left: 8px;
+    //         transition-duration: .5s;
+    //     }
+    //     &:hover,
+    //     &:focus {
+    //         color: #2b5dff;
+    //     }
+    //     &:active{   
+    //         color: #6782dd;
+    //     }
+    //     &:hover i,
+    //     &:focus i{
+    //         color: #2b5dff;
+    //     }
+    //     &:active i{
+    //         color: #6782dd;
+    //     }
+    // }
+    // &__list {
+    //     position: absolute;
+    //     height: 0;
+    //     overflow: hidden;
+    //     // transition-duration: .5s;
+    //     button {
+    //         font-weight: 500;
+    //         font-size: 16px;
+    //         line-height: 130%;
+    //         letter-spacing: 0.03em;
+    //         color: #585656;
+    //     }
+    // }
 }
 
 .lang__list:hover {
@@ -162,12 +173,8 @@
         letter-spacing: 0.02em;
         color: #FFFFFF;
         transition-duration: .5s;
-        &:hover,
-        &:focus {
-            background: #3858E4;
-        }
         &:active {
-            color: #585656;
+            // color: #585656;
         }
     }
     &__list-2 {
