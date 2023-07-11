@@ -48,6 +48,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     })
 
+	const modal = new bootstrap.Modal("#thankYouModal");
+
     $("form").submit(function() {
         let th = $(this);
         $.ajax({
@@ -56,6 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
             data: th.serialize(),
             success: function (data) {
                 th.trigger("reset");
+				modal.show();
 				console.log(data);
             },
         });

@@ -38,10 +38,10 @@
 						@csrf
 						<input type="hidden" name="to" value="{{ contacts()->resume_email }}">
 						<input type="hidden" name="subject" value="Резюме">
-                        <input class="form__input" name="name" type="text" placeholder="{{ __('career.form.contact') }}">
-                        <input class="form__input" name="phone" type="tel" placeholder="{{ __('career.form.phone') }}">
-                        <input class="form__input" name="email" type="email" placeholder="Email">
-                        <textarea class="form__textarea" name="description" placeholder="{{ __('career.form.text') }}"></textarea>
+                        <input class="form__input" name="name" type="text" placeholder="{{ __('career.form.contact') }}" required>
+                        <input class="form__input" name="phone" type="tel" placeholder="{{ __('career.form.phone') }}" required>
+                        <input class="form__input" name="email" type="email" placeholder="Email" required>
+                        <textarea class="form__textarea" name="description" placeholder="{{ __('career.form.text') }}" required></textarea>
                         <label class="form__checkbox">
                             <input class="form__input--none" type="checkbox">
                             <span class="form__checkbox-elem"></span>
@@ -49,7 +49,7 @@
                                 {{ __('career.form.check.text') }} <a href="{{ route('policy') }}">{{ __('career.form.check.link') }}</a>
                             </span>
                         </label>
-                        <button type="submit" class="form__btn btn" data-bs-toggle="modal" data-bs-target="#thankYouModal">
+                        <button type="submit" class="form__btn btn">
                             <span>{{ __('career.form.button') }}</span>
                             <i class="icon-enter"></i>
                         </button>

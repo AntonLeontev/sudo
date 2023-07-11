@@ -9,8 +9,8 @@
 			<input type="hidden" name="to" value="{{ contacts()->feedback_email }}">
 			<input type="hidden" name="subject" value="Сотрудничество">
 			<input class="form__input" name="name" type="text" placeholder="{{ __('cooperation.form.contact') }}">
-			<input class="form__input" name="phone" type="tel" placeholder="{{ __('cooperation.form.phone') }}">
-			<input class="form__input" name="email" type="email" placeholder="{{ __('cooperation.form.email') }}">
+			<input class="form__input" name="phone" type="tel" placeholder="{{ __('cooperation.form.phone') }}" required>
+			<input class="form__input" name="email" type="email" placeholder="{{ __('cooperation.form.email') }}" required>
 			<textarea class="form__textarea" name="description" placeholder="{{ __('cooperation.form.description') }}"></textarea>
 			<label class="form__checkbox">
 				<input class="form__input--none" type="checkbox" checked>
@@ -20,7 +20,7 @@
 						href="{{ route('policy') }}">{{ __('cooperation.form.check.link') }}</a>
 				</span>
 			</label>
-			<button type="submit" class="form__btn btn" data-bs-toggle="modal" data-bs-target="#thankYouModal">
+			<button type="submit" class="form__btn btn">
 				<span>{{ __('cooperation.form.button') }}</span>
 				<i class="icon-enter"></i>
 			</button>

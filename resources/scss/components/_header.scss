@@ -2,7 +2,7 @@
 	display: flex;
 	align-items: center;
     background-color: #171616;
-	
+
     &__wrap {
         max-width: 1440px;
         width: 100%;
@@ -176,9 +176,6 @@
         letter-spacing: 0.02em;
         color: #FFFFFF;
         transition-duration: .5s;
-        &:active {
-            // color: #585656;
-        }
     }
     &__list-2 {
         // height: 0;
