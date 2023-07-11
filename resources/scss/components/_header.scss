@@ -1,5 +1,8 @@
 .header {
+	display: flex;
+	align-items: center;
     background-color: #171616;
+	
     &__wrap {
         max-width: 1440px;
         width: 100%;
