@@ -23,7 +23,9 @@
     </div>
     <div class="publications__block-2">
         <div>
-            <div class="publications__data">{{ $publication->date->format('j.m.Y') }}</div>
+			@if (! empty($publication->date))
+            	<div class="publications__data">{{ $publication->date->format('j.m.Y') }}</div>
+			@endif
             <div class="publications__name">{{ $publication->{$author} }}</div>
             <p class="publications__list">
 				{!! $publication->{$description} !!}
