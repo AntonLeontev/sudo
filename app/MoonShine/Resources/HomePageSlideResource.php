@@ -40,12 +40,13 @@ class HomePageSlideResource extends Resource
 					Block::make([
 						Number::make('Позиция', 'position')
 							->default(HomePageSlide::orderByDesc('position')->first('position')->position + 1)
+							->required()
 							->sortable(),
 						Color::make('Цвет текста', 'text_color')
 							->default('#000000')
 							->hideOnIndex(),
 						Image::make('Фон', 'image')
-							->hint('Ширина изображение должна быть более 1900px, высота более 800px')
+							->hint('Ширина изображение должна быть более или равна 1900px, высота более или равна 800px')
 							->dir('homePageSlides'),
 						SwitchBoolean::make('Опубликован', 'enabled')
 							->autoUpdate(true)
