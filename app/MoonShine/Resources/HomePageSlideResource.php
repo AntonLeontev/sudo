@@ -29,7 +29,7 @@ class HomePageSlideResource extends Resource
  
     public static string $orderType = 'ASC'; // Тип сортировки по умолчанию 
 
-	protected bool $editInModal = true;
+	protected bool $editInModal = false;
 
 	public function fields(): array
 	{

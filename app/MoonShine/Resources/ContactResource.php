@@ -21,7 +21,7 @@ class ContactResource extends Resource
 
 	public static array $activeActions = ['show', 'edit'];
 
-	protected bool $editInModal = true;
+	protected bool $editInModal = false;
 
 	public function fields(): array
 	{

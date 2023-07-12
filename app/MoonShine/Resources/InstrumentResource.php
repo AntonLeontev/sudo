@@ -29,7 +29,7 @@ class InstrumentResource extends Resource
 
 	public static string $orderType = 'ASC';
 
-	protected bool $editInModal = true;
+	protected bool $editInModal = false;
 
 	public function fields(): array
 	{

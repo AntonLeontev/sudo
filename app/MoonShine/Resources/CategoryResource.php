@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 use Illuminate\Support\Facades\Cache;
 use MoonShine\Actions\FiltersAction;
+use MoonShine\Decorations\Flex;
 use MoonShine\Fields\HasMany;
 use MoonShine\Fields\Number;
 use MoonShine\Fields\Text;
@@ -22,23 +23,25 @@ class CategoryResource extends Resource
 
 	public static string $orderBy = 'position';
 
-	protected bool $editInModal = true;
+	protected bool $editInModal = false;
 
 	public static array $with = ['instruments'];
 
 	public function fields(): array
 	{
 		return [
-		    Number::make('Позиция', 'position')
-				->default(Category::query()->max('position') + 1)
-				->required(),
-
-			Text::make('Название', 'title_ru')
-				->required(),
-
-			Text::make('Название на английском', 'title_en')
-				->hideOnIndex()
-				->required(),
+			Flex::make([
+				Number::make('Позиция', 'position')
+					->default(Category::query()->max('position') + 1)
+					->required(),
+	
+				Text::make('Название', 'title_ru')
+					->required(),
+	
+				Text::make('Название на английском', 'title_en')
+					->hideOnIndex()
+					->required(),
+			]),
 
 			HasMany::make('Инструменты', 'instruments', new InstrumentResource())
 				->resourceMode(),

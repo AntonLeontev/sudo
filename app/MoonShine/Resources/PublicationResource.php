@@ -30,9 +30,9 @@ class PublicationResource extends Resource
  
     public static string $orderType = 'ASC'; // Тип сортировки по умолчанию 
 
-	protected bool $editInModal = true;
+	protected bool $editInModal = false;
 
-	protected bool $createInModal = true;
+	protected bool $createInModal = false;
 
 	public function fields(): array
 	{
