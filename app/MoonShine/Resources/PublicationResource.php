@@ -82,9 +82,9 @@ class PublicationResource extends Resource
 									->hideOnIndex(),
 							]),
 							Tab::make('English', [
-								Text::make('Заголовок', 'title_en')->hideOnIndex(),
-								Text::make('Автор', 'author_en')->hideOnIndex(),
-								TinyMce::make('Описание', 'description_en')
+								Text::make('Заголовок на английском', 'title_en')->hideOnIndex(),
+								Text::make('Автор на английском', 'author_en')->hideOnIndex(),
+								TinyMce::make('Описание на английском', 'description_en')
 									->plugins('link lists fullscreen wordcount table preview')
 									->toolbar('undo redo | blocks fontsize | alignleft aligncenter alignright | bold italic underline | link | bullist numlist')
 									->hideOnIndex(),
@@ -141,6 +141,11 @@ class PublicationResource extends Resource
 	}
 
 	protected function afterDeleted(Model $item)
+	{
+		Cache::delete('publications');
+	}
+
+	protected function afterMassDeleted(Model $item)
 	{
 		Cache::delete('publications');
 	}

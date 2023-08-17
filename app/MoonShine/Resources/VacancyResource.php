@@ -100,4 +100,14 @@ class VacancyResource extends Resource
 	{
 		Cache::delete('vacancies');
 	}
+
+	protected function afterDeleted(Model $item)
+	{
+		Cache::delete('vacancies');
+	}
+
+	protected function afterMassDeleted(Model $item)
+	{
+		Cache::delete('vacancies');
+	}
 }

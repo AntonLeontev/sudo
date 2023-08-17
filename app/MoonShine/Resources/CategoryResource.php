@@ -88,4 +88,9 @@ class CategoryResource extends Resource
 	{
 		Cache::delete('instruments');
 	}
+
+	protected function afterMassDeleted(Model $item)
+	{
+		Cache::delete('instruments');
+	}
 }

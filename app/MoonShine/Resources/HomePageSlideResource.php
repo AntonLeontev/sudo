@@ -105,4 +105,14 @@ class HomePageSlideResource extends Resource
 	{
 		Cache::delete('slides');
 	}
+
+	protected function afterDeleted(Model $item)
+	{
+		Cache::delete('slides');
+	}
+
+	protected function afterMassDeleted(Model $item)
+	{
+		Cache::delete('slides');
+	}
 }
