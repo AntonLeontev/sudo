@@ -16,7 +16,10 @@ use MoonShine\Fields\ID;
 use MoonShine\Fields\Image;
 use MoonShine\Fields\Number;
 use MoonShine\Fields\SwitchBoolean;
+use MoonShine\Fields\Text;
 use MoonShine\Fields\Textarea;
+use MoonShine\Fields\TinyMce;
+use MoonShine\Fields\Url;
 use MoonShine\Resources\Resource;
 
 class HomePageSlideResource extends Resource
@@ -42,9 +45,9 @@ class HomePageSlideResource extends Resource
 							->default(HomePageSlide::orderByDesc('position')->first('position')->position + 1)
 							->required()
 							->sortable(),
-						Color::make('Цвет текста', 'text_color')
-							->default('#000000')
-							->hideOnIndex(),
+						// Color::make('Цвет текста', 'text_color')
+						// 	->default('#000000')
+						// 	->hideOnIndex(),
 						Image::make('Фон', 'image')
 							->hint('Ширина изображение должна быть более или равна 1900px, высота более или равна 800px')
 							->dir('homePageSlides'),
@@ -56,11 +59,28 @@ class HomePageSlideResource extends Resource
 				])->columnSpan(4),
 				Column::make([
 					Block::make([
-						Textarea::make('Русский текст', 'text_ru')
+						TinyMce::make('Русский текст', 'text_ru')
+							->plugins('link lists fullscreen wordcount table preview')
+							->toolbar('undo redo | blocks fontsize | alignleft aligncenter alignright | bold italic underline | link | bullist numlist')
 							->required(),
-						Textarea::make('English text', 'text_en')
+						TinyMce::make('English text', 'text_en')
+							->plugins('link lists fullscreen wordcount table preview')
+							->toolbar('undo redo | blocks fontsize | alignleft aligncenter alignright | bold italic underline | link | bullist numlist')
 							->required()
 							->hideOnIndex(),
+						SwitchBoolean::make('Кнопка с заявкой', 'has_request_button')
+							->hint('Если активно, то будет показана кнопка "Отправить заявку". Если нет - то кнопка со ссылкой из настроек ниже')
+							->autoUpdate(false)
+							->default(true)
+							->hideOnIndex(),
+						Flex::make([
+							Text::make('Текст кнопки на русском', 'button_text_ru')
+								->hideOnIndex(),
+							Text::make('Button text', 'button_text_en')
+								->hideOnIndex(),
+							Url::make('Ссылка кнопки', 'button_link')
+								->hideOnIndex(),
+						]),
 					]),
 				])->columnSpan(8),
 			]),
@@ -75,7 +95,11 @@ class HomePageSlideResource extends Resource
 			'text_ru' => ['required', 'string', 'max:400'],
 			'text_en' => ['required', 'string', 'max:400'],
 			'enabled' => ['boolean'],
-			'image' => ['image', 'dimensions:min_width=1900,min_height=800']
+			'image' => ['image', 'dimensions:min_width=1900,min_height=800'],
+			'has_request_button' => ['boolean'],
+			'button_text_ru' => ['required_if:has_request_button,false', 'string', 'nullable', 'max:100'],
+			'button_text_en' => ['required_if:has_request_button,false', 'string', 'nullable', 'max:100'],
+			'button_link' => ['required_if:has_request_button,false', 'string', 'nullable', 'max:255'],
 		];
     }
 

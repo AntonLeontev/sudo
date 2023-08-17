@@ -6,6 +6,7 @@
 
 @php
 	$text = 'text_' . app()->getLocale();
+	$button = 'button_text_' . app()->getLocale();
 @endphp
 
 <div class="swiper-slide">
@@ -14,12 +15,19 @@
             <span class="elem-a2 wow fadeInUp" data-wow-duration=".2s" style="color: {{ $slide->text_color }}">
 				{{ str($position)->padLeft(2, '0')  }} - {{ str($total)->padLeft(2, '0') }}
 			</span>
-            <p class="wow fadeInUp" data-wow-duration=".5s" style="color: {{ $slide->text_color }}">
-				{{ $slide->{$text} }}
-			</p>
-            <div class="index-block__btn-box elem-a3 wow zoomIn">
-                <button class="index-block__btn">{{ __('home.slide-button') }}</button>
-            </div>
+            <div class="wow fadeInUp" data-wow-duration=".5s" style="color: {{ $slide->text_color }}">
+				{!! $slide->{$text} !!}
+			</div>
+
+			@if ($slide->has_request_button)
+				<div class="index-block__btn-box elem-a3 wow zoomIn">
+					<button class="index-block__btn">{{ __('home.slide-button') }}</button>
+				</div>
+			@else
+				<div class="index-block__btn-box elem-a3 wow zoomIn">
+					<a href="{{ $slide->button_link }}" class="index-block__btn home-page-slide__link" target="_blank">{{ $slide->{$button} }}</a>
+				</div>
+			@endif
         </div>
     </div>
 </div>
