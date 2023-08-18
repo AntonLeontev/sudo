@@ -1,9 +1,9 @@
 <?php
 
 return [
-	'title' => 'Публикации',
-	'h1' => 'Публикации',
+	'title' => 'Publications',
+	'h1' => 'Publications',
 	'publication' => [
-		'button' => 'Узнать больше',
+		'button' => 'Read more',
 	],
 ];
