@@ -27,11 +27,19 @@
 			{!! $tool->{$description} !!}
 		</div>
 
-		@unless (empty($tool->link))
-			<a target="_blank" href="{{ $tool->link }}" class="btn" rel="nofollow">
-				<span>{{ __('calculations.tool.button') }}</span>
-				<i class="icon-enter"></i>
-			</a>
-		@endunless
+		@if ($tool->has_request_button)
+			<button class="btn btn-modal">
+				<span>{{ __('calculations.tool.request') }}</span>
+				{{-- <i class="icon-enter"></i> --}}
+			</button>
+		@else
+			@unless (empty($tool->link))
+				<a target="_blank" href="{{ $tool->link }}" class="btn" rel="nofollow">
+					<span>{{ __('calculations.tool.button') }}</span>
+					<i class="icon-enter"></i>
+				</a>
+			@endunless
+		@endif
+
     </div>
 </div>

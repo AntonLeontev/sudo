@@ -59,7 +59,6 @@ document.addEventListener('DOMContentLoaded', () => {
             success: function (data) {
                 th.trigger("reset");
 				modal.show();
-				console.log(data);
             },
         });
         return false;

@@ -166,24 +166,25 @@
         <button class="modal-feedback__close">
             <i class="icon-close"></i>
         </button>
-        <h3 class="modal-feedback__title">Хотите предложить сотрудничество или заказать услугу?</h3>
-        <p class="modal-feedback__text">Заполните форму и наши специалисты свяжутся с вами для обсуждения деталей</p>
-
+        <h3 class="modal-feedback__title">{{ __('request-form.title') }}</h3>
+        <p class="modal-feedback__text">{{ __('request-form.subtitle') }}</p>
         <form class="form">
-            <input class="form__input" name="Контактное лицо" type="text" placeholder="Контактное лицо">
-            <input class="form__input" name="Телефон" type="tel" placeholder="Телефон">
-            <input class="form__input" name="Email" type="email" placeholder="Email">
-            <textarea class="form__textarea" name="Описание проекта" placeholder="Описание проекта"></textarea>
+			@csrf
+			<input type="hidden" name="to" value="{{ contacts()->email }}">
+			<input type="hidden" name="subject" value="Заявка с сайта">
+            <input class="form__input" name="name" type="text" placeholder="{{ __('request-form.person') }}">
+            <input class="form__input" name="phone" type="tel" placeholder="{{ __('request-form.phone') }}">
+            <input class="form__input" name="email" type="email" placeholder="Email" required>
+            <textarea class="form__textarea" name="description" placeholder="{{ __('request-form.description') }}"></textarea>
             <label class="form__checkbox">
-                <input class="form__input--none" type="checkbox">
+                <input class="form__input--none" type="checkbox" required>
                 <span class="form__checkbox-elem"></span>
-                <span class="form__checkbox-text text-justify">
-                    Нажимая кнопку Отправить, я даю согласие на обработку моих персональных данных и соглашаюсь с <a
-                        href="{{ route('policy') }}">Политикой конфиденциальности</a>
+                <span class="form__checkbox-text text-justify ">
+                    {{ __('request-form.check') }} <a href="{{ route('policy') }}">{{ __('request-form.policy') }}</a>
                 </span>
             </label>
-            <button class="form__btn btn" data-bs-toggle="modal" data-bs-target="#thankYouModal" type="submit">
-                <span>Отправить</span>
+            <button type="submit" class="form__btn btn">
+                <span>{{ __('request-form.btn') }}</span>
                 <i class="icon-enter"></i>
             </button>
         </form>
@@ -201,7 +202,7 @@
                 <div class="modal-body d-flex justify-content-center align-items-center">
                     <div class="thank-modal__content">
                         <p class="thank-modal__text w-75 h2 m-auto px-4 pb-3 text-center">
-                            Спасибо, Ваша заявка принята!
+                            {{ __('request-form.tnx') }}
                         </p>
                     </div>
                 </div>

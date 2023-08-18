@@ -21,6 +21,7 @@ class Instrument extends Model
 		'link',
 		'category_id',
 		'enabled',
+		'has_request_button',
 	];
 
 	public function category(): BelongsTo

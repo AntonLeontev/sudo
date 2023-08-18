@@ -71,15 +71,19 @@ class InstrumentResource extends Resource
 
 				Column::make([
 					Block::make([
+						BelongsTo::make('Категория', 'category_id', 'title_ru')
+							->sortable(),
 						Number::make('Позиция в категории', 'position')
 							->hideOnIndex()
 							->default(Instrument::max('position') + 1)
 							->required(),
+						SwitchBoolean::make('Кнопка с заявкой', 'has_request_button')
+							->default(1)
+							->hideOnIndex()
+							->hint('Если активно, то будет показана кнопка "Отправить заявку". Если нет - то кнопка "Перейти" со ссылкой ниже'),
 						Url::make('Ссылка', 'link')
 							->copy()
 							->hideOnIndex(),
-						BelongsTo::make('Категория', 'category_id', 'title_ru')
-							->sortable(),
 						SwitchBoolean::make('Активен', 'enabled')
 							->default(1),
 
@@ -101,6 +105,7 @@ class InstrumentResource extends Resource
 			'link' => ['nullable', 'string', 'max:255', 'url'],
 			'enabled' => ['nullable', 'boolean'],
 			'position' => ['required', 'integer'],
+			'has_request_button' => ['boolean'],
 		];
     }
 
