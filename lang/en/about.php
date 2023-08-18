@@ -1,33 +1,30 @@
 <?php
 
 return [
-	'title' => 'О нас',
-	'h1' => 'О нас',
+	'title' => 'About us',
+	'h1' => 'About us',
 	'work' => [
-		'title' => 'Работа компании',
-		'1' => 'ООО «Судо» – коммерческая IT-компания, основным видом деятельности которой является разработка высокопроизводительного программного обеспечения. Мы специализируемся на решении высокотехнологичных задач, а также на ускорении сложных математических алгоритмов путём оптимизации программных решений и переноса вычислений на более эффективные аппаратные ускорители.',
-		'2' => 'Компания занимается разработкой с 2018 года. Мы сотрудничали с различными производственными и научно-производственными компаниями, реализовали несколько крупных проектов в различных областях деятельности, а также занимались разработкой менее глобальных проектов и программных продуктов. О реализованных проектах вы можете узнать на странице',
-		'link' => 'Проекты',
-		'3' => 'Команда проекта состоит из высококвалифицированных разработчиков, имеющих большой перечень научных и прикладных достижений. Среди наших сотрудников кандидаты наук и магистры ИТМО, сотрудники СПбГУ, и PhD получившие образование за рубежом. Основной состав команды сохраняется с момента запуска компании. 
-        Наши ключевые особенности:',
+		'title' => 'Company work',
+		'1' => 'Sudo LLC (SUDO) is a commercial IT company whose main activity is the development of high-performance software. We specialize in solving high-tech problems, as well as in accelerating complex mathematical algorithms by optimizing software solutions and transferring calculations to more efficient hardware accelerators.',
+		'2' => 'The company has been developing since 2018. We have experience of cooperation with various manufacturing, research, and production companies, have implemented several large projects in various fields of activity, as well as are developing less global projects and software products. Our completed projects are listed on the',
+		'link' => 'Projects page',
+		'3' => 'Our team consists of highly qualified developers with a large list of scientific and applied achievements. Among our employees are faculties, PhDs and masters of leading Russian (ITMO, St. Petersburg State University) and foreign universities. The main composition of the team has been preserved since the founding of the company. Our key features:',
 		'list' => [
-			'1' => 'Мы осознанно подходим к выбору стека технологий и построению архитектуры, что позволяет нам использовать передовой опыт и оптимизировать будущие расходы на поддержку и развитие наших продуктов. Наши приоритеты в работе: чистый код и качественный продукт.',
-			'2' => 'При создании новых продуктов мы стараемся делать их максимально простыми и удобными как для пользователей, так и для разработчиков. Мы верим, что самые простые решения являются самыми надёжными и эффективными.',
-			'3' => 'Перед началом разработки мы тщательно изучаем предметную область. Это даёт нам глубокое понимание нашей задачи и позволяет выполнять работу безукоризненно.',
+			'1' => 'We have a conscious approach to choosing a technology stack and building an architecture, which allows us to use best practices and optimize future costs for supporting and developing our products. Our priorities in work: clean code and high-quality product.',
+			'2' => 'When creating new products, we try to make them as simple and convenient as possible for both users and developers. We believe that the simplest solutions are the most reliable and effective.',
+			'3' => 'Before starting development, we carefully study the subject area. This gives us a deep understanding of our task and allows us to perform the work flawlessly.',
 		],
 	],
 	'spec' => [
-		'title' => 'Наши специалисты',
-		'text' => 'Команда компании Судо состоит их высококвалифицированных специалистов в области разработки, проектирования и анализа, многие из которых являются научными сотрудниками в ТОПовых ВУЗах страны и имеют учёные степени как в России, так и за рубежом. Мы регулярно участвуем в научных и инженерных исследованиях и в научных мероприятиях, что позволяет поддерживать высокий уровень профессионализма в выполнении работ',
+		'title' => 'Our specialists',
+		'text' => 'The SUDO team consists of highly qualified specialists in the field of development, software design and analysis, many of whom are researchers in leading universities in the country and have degrees both in Russia and abroad. We regularly participate in scientific and engineering research as well as scientific events, that allows us to maintain a high level of professionalism in the performance of work.',
 		'list' => [
-			'1' => 'Около 25 сотрудников трудится в нашей компании',
-			'2' => 'Среди наших специалистов кандидаты наук и выпускники лучших IT-ВУЗов России',
-			'3' => 'Сплочённый, дружный коллектив и рабочее пространство ALL INCLUSIVE',
+			'1' => 'Our company has about 25 employees',
+			'2' => 'Among our employees are PhDs and graduates of the best IT universities in Russia',
+			'3' => 'Close-knit, friendly team and workspace ALL INCLUSIVE',
 		],
 	],
 	'team' => [
-		'text' => 'Наша команда – наша ценность, поэтому мы делаем лучшие условия для работы каждого сотрудника.
-                        Присоединяйтесь к нашей команде, чтобы заниматься решением сложных, но интересных задач и
-                        развиваться вместе.',
+		'text' => 'Our team is our main value, that\'s why we make the best working conditions for every employee. Join our team to solve challenging but interesting tasks and develop together.',
 	],
 ];

@@ -14,7 +14,9 @@
 
                 <h1 class="tab dest">
                     <span class="hero__title">{{ __('home.h1.1') }}</span>
+					<br>
                     <span class="hero__title">{{ __('home.h1.2') }}</span>
+					<br>
                     <span class="hero__title">{{ __('home.h1.3') }}</span>
                 </h1>
 

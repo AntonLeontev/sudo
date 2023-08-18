@@ -1,22 +1,22 @@
 <?php
 
 return [
-	'title' => 'Карьера',
-	'h1' => 'Карьера',
-	'description' => 'Основной состав команды – энергичные, заряженные и горящие любимым делом специалисты. Мы в поиске таких же, как и мы. Хочешь стать частью нашей команды – отправляй резюме.',
-	'salary' => 'Зарплата',
+	'title' => 'Careers',
+	'h1' => 'Careers',
+	'description' => 'The core team is made up of energetic, enthusiastic and passionate professionals. We are looking for people just like us. If you want to become a part of our team, send your resume.',
+	'salary' => 'Salary',
 	'form' => [
-		'title' => 'Готовы прислать свое резюме?',
-		'subtitle' => 'Заполните форму и наши специалисты рассмотрят Ваше резюме. В случае положительно ответа, мы с Вами свяжемся',
-		'no-vacancies' => 'К сожалению, в настоящий момент у нас нет открытых вакансий. Однако, если Вы очень хотите с нами работать, пришлите нам своё резюме. ',
-		'contact' => 'Контактное лицо',
-		'phone' => 'Телефон',
-		'text' => 'Описание проекта',
+		'title' => 'Are you ready to submit your CV?',
+		'subtitle' => 'Fill out the form and our specialists will review your it. In case of a positive response, we will contact you.',
+		'no-vacancies' => 'Unfortunately, we do not have any open positions at the moment. However, if you are very interested in working with us, send us your CV.',
+		'contact' => 'Name',
+		'phone' => 'Phone',
+		'text' => 'Your CV',
 		'check' => [
-			'text' => 'Нажимая кнопку Отправить, я даю согласие на обработку моих персональных данных и соглашаюсь с ',
-			'link' => 'Политикой конфиденциальности',
+			'text' => 'By clicking the Send button, I consent to the processing of my personal data and agree to the',
+			'link' => 'Privacy Policy',
 		],
-		'button' => 'Отправить',
-		'thanks' => 'Спасибо, Ваша заявка принята!',
+		'button' => 'Send',
+		'thanks' => 'Thank you, your request has been accepted!',
 	]
 ];

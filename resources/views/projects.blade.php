@@ -73,9 +73,9 @@
                     <h3>{{ __('projects.steps.title') }}</h3>
                 </div>
                 <div class="projects__block-3--block-2">
-                    <p class="projects__block-3--text text-justify ">
+                    {{-- <p class="projects__block-3--text text-justify ">
                         {{ __('projects.steps.text') }}
-                    </p>
+                    </p> --}}
                     <ul class="projects__block-3--list">
                         <li class="projects__block-3--item">
                             <div>01/08</div>

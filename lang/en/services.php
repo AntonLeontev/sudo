@@ -1,27 +1,27 @@
 <?php
 
 return [
-	'title' => 'Услуги',
-	'h1' => 'Услуги',
-	'text' => 'Компания Судо готова реализовать ваш проект, используя преимущественно проверенные высокотехнологичные решения, передовые методики и методологии в разработке и управлении проектами. Мы предлагаем оптимальные решения для получения максимальной производительности и эффективности в решении сложных задач',
+	'title' => 'Services',
+	'h1' => 'Services',
+	'text' => 'SUDO team is ready to implement your project using both conventional and innovative high-tech solutions, advanced techniques and methodologies in project development and management. We offer optimal solutions for obtaining maximum productivity and efficiency in solving complex problems.',
 	'what-do' => [
-		'title' => 'Что мы делаем',
+		'title' => 'What are we doing:',
 		'1' => [
-			'title' => 'Проектирование',
-			'text' => 'Создание любого продукта начинается с идеи. Наша опытная команда поможет Вам на каждом этапе создания продукта. Основываясь на Ваших пожеланиях, мы поможем сформулировать идею, предложим интересные решения, вместе сформируем техническое задание и предоставим Вам готовый проект',
+			'title' => 'Design',
+			'text' => 'The creation of any product begins with an idea. Our experienced team will help you at every step of the way to create a product. Based on your wishes, we will help formulate an idea, offer interesting solutions, together we will form a technical task and provide you with a finished project.',
 		],
 		'2' => [
-			'title' => 'Разработка',
-			'text' => 'Мы – современная команда, использующая гибкие методологии разработки продукта. Созданный проект остаётся живым в процессе реализации. Для достижения лучшего результата мы работаем над продуктом, оставаясь с Вами на связи. Наши разработчики создадут оптимальные решения, используя передовые технологии для реализации Ваших идей, а Ваши корректировки в процессе разработки помогут создать актуальный продукт, полностью удовлетворяющий Вашим запросам',
+			'title' => 'Development',
+			'text' => 'We are a modern team using agile product development methodologies. The created project remains alive in the process of implementation. To achieve the best result, we are working on the product, staying in touch with you. Our developers will create optimal solutions using advanced technologies to implement your ideas, and adjustments you make during the development process will help to create an actual product that fully meets your requirements.',
 		],
 		'3' => [
-			'title' => 'Исследования',
-			'text' => 'Исследовательская деятельность – это наше тайное оружие. Постоянное участие компании в научных и инженерных исследованиях помогает нам сохранять первенство в использовании наукоёмких технологий на практике. Среди наших штатных разработчиков есть действующие сотрудники топовых российских и зарубежных ВУЗов. Кроме того, мы активно работаем со студентами, поддерживаем их и помогаем им развиваться, а самым перспективным предлагаем влиться в нашу дружную команду',
+			'title' => 'Research',
+			'text' => 'Research is our secret weapon. The fact that our team ongoing involvement in scientific and engineering research helps us to remain at the forefront of using knowledge-intensive technologies in practice. Among our staff developers there are active faculties of top Russian and foreign universities. In addition, we actively work with students, support them and help them develop, and we offer the most promising ones to join our friendly team.',
 		],
 	],
 	'stack' => [
-		'title' => 'Стек технологий',
-		'1' => 'Мы приверженцы взвешенного подхода при выборе используемых в разработке технологий. При создании новых продуктов мы комплексно оцениваем задачу с целью определения оптимального набора используемых инструментов, языков, технологий.',
-		'2' => 'У нас есть опыт в разработке fintech и blockchain проектов, в программировании GPU с помощью технологий CUDA и OpenCL, в разработке для FPGA Xilinx и низкоуровневом системном программировании под Linux',
+		'title' => 'Technology Stack',
+		'1' => 'We are committed to a balanced approach when selecting technologies used in development. When creating new products, we comprehensively evaluate the task in order to determine the optimal set of tools, languages, and technologies to be used.',
+		'2' => 'We have experience in development of scientific, engineering, HPC, fintech and blockchain projects, in GPU programming with CUDA and OpenCL technologies, in development for Xilinx FPGA and low-level system programming for Linux.',
 	],
 ];

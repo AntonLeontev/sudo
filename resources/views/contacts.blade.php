@@ -37,26 +37,30 @@
         <section class="contacts__block-form mb-140">
             <div class="container block">
                 <div class="mb-63">
-                    <h3 class="title-h3 mb-28">Остались вопросы?</h3>
-                    <p class="contacts__text">Заполните форму и наши специалисты свяжутся с вами для для ответа на вопросы</p>
+                    <h3 class="title-h3 mb-28">{{ __('contacts.form.questions') }}</h3>
+                    <p class="contacts__text">{{ __('contacts.form.subtitle') }}</p>
                 </div>
                 <div>
                     <form class="form">
-                        <input class="form__input" name="Контактное лицо" type="text" placeholder="Контактное лицо">
-                        <input class="form__input" name="Телефон" type="tel" placeholder="Телефон">
-                        <input class="form__input" name="Email" type="email" placeholder="Email">
-                        <textarea class="form__textarea" name="Описание проекта" placeholder="Описание проекта"></textarea>
-                        <label class="form__checkbox">
-                            <input class="form__input--none" type="checkbox">
-                            <span class="form__checkbox-elem"></span>
-                            <span class="form__checkbox-text text-justify ">
-                                Нажимая кнопку Отправить, я даю согласие на обработку моих персональных данных и соглашаюсь с <a href="{{ route('policy') }}">Политикой конфиденциальности</a>
-                            </span>
-                        </label>
-                        <button type="submit" class="form__btn btn" data-bs-toggle="modal" data-bs-target="#thankYouModal">
-                            <span>Отправить</span>
-                            <i class="icon-enter"></i>
-                        </button>
+                        @csrf
+						<input type="hidden" name="to" value="{{ contacts()->feedback_email }}">
+						<input type="hidden" name="subject" value="Сотрудничество">
+						<input class="form__input" name="name" type="text" placeholder="{{ __('contacts.form.contact') }}">
+						<input class="form__input" name="phone" type="tel" placeholder="{{ __('contacts.form.phone') }}" required>
+						<input class="form__input" name="email" type="email" placeholder="{{ __('contacts.form.email') }}" required>
+						<textarea class="form__textarea" name="description" placeholder="{{ __('contacts.form.description') }}"></textarea>
+						<label class="form__checkbox">
+							<input class="form__input--none" type="checkbox" checked>
+							<span class="form__checkbox-elem"></span>
+							<span class="form__checkbox-text text-justify">
+								{{ __('contacts.form.check.text') }} <a
+									href="{{ route('policy') }}">{{ __('contacts.form.check.link') }}</a>
+							</span>
+						</label>
+						<button type="submit" class="form__btn btn">
+							<span>{{ __('contacts.form.button') }}</span>
+							<i class="icon-enter"></i>
+						</button>
                     </form>
                 </div>
             </div>
@@ -72,7 +76,7 @@
                 <div class="modal-body d-flex justify-content-center align-items-center">
                     <div class="thank-modal__content">
                         <p class="thank-modal__text w-75 m-auto h2 pb-3 px-4 text-center">
-                            Спасибо, Ваша заявка принята!
+                            {{ __('contacts.thanks') }}
                         </p>
                     </div>
                 </div>

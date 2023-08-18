@@ -2,13 +2,13 @@
 
 return [
 	'company' => 'Company',
-	'about' => 'About',
+	'about' => 'About us',
 	'publications' => 'Publications',
-	'reviews' => 'Reviews',
+	'reviews' => 'Testimonials',
 	'services' => 'Services',
 	'projects' => 'Projects',
 	'instruments' => 'Tools',
-	'career' => 'Career',
+	'career' => 'Careers',
 	'contacts' => 'Contacts',
 	'search' => 'Search...',
 	'search-placeholder' => 'Enter titles',

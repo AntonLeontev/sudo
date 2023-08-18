@@ -1,62 +1,40 @@
 <?php
 
 return [
-	'title' => 'Главная',
+	'title' => 'Main',
 	'h1' => [
-		'mob' => 'Разработка высокотехнологичных программных продуктов',
-		'1' => 'Разработка',
-		'2' => 'высокотехнологичных',
-		'3' => 'программных продуктов',
+		'mob' => 'Development of high-tech software products',
+		'1' => 'Development',
+		'2' => 'of high-tech',
+		'3' => 'software products',
 	],
-	'slide-button' => 'Оставить заявку',
-	'down' => 'вниз',
-	'subtitle' => 'Судо – быстрое решение для сложных вычислительных процессов',
-	'text' => 'ООО «Судо» – IT-компания, основным видом деятельности которой является разработка программных
-                        продуктов. Наша специализация – разработка высокотехнологичных программ, оптимизация и ускорение
-                        сложных математических алгоритмов.',
-	'more' => 'Узнать больше',
+	'slide-button' => 'Leave a request',
+	'down' => 'down',
+	'subtitle' => 'SUDO – fast solution for sophisticated computing processes.',
+	'text' => 'Sudo Ltd. is the IT company whose main activity is software product development. We specialize in the development of high-tech software and optimization and acceleration of sophisticated mathematical algorithms.',
+	'more' => 'Read more',
 	'advantages' => [
-		'title' => 'Наши преимущества',
-		'1' => 'Мы имеем
-                            собственный парк высокопроизводительного серверного
-                            оборудования, а также используем удалённые арендованные аппаратные мощности',
-		'2' => 'Для
-                            достижения высокой производительности мы не только
-                            оптимизируем код для центральных процессоров, но также эффективно переносим вычисления на
-                            графические процессоры',
-		'3' => 'Мы
-                            создаём онлайн сервисы, ориентированные на решение научных
-                            задач, бесплатно предоставляемые исследователям, инженерам и студентам',
+		'title' => 'Our advantages',
+		'1' => 'We have assembled a team of highly qualified developers and scientists, each of whom has a good engineering, mathematical, algorithmic and GPGPU background.',
+		'2' => 'We provide our clients not only with the experience of each member of our team, but also with the collected knowledge, which together provides a better solution to problems than the experience and knowledge of each specialist individually.',
+		'3' => 'We have developed a unique set of internal use tools for analyzing and optimizing GPGPU code. These tools allow us to achieve maximum performance when developing for GPUs.',
 	],
 	'services' => [
-		'title' => 'Услуги',
+		'title' => 'Services',
 		'1' => [
-			'title' => 'Проектирование',
-			'text' => 'Идея – основа любого продукта. При проектировании продукта
-                                наша опытная команда поможет
-                                сформулировать идею, предложит интересные решения, вместе сформируем ТЗ и предоставим
-                                готовый проект',
+			'title' => 'Design',
+			'text' => 'Idea is the basis of any product. When designing a product, our experienced team will help to formulate the idea, offer interesting solutions, together we will form the TOR and provide the finished project.',
 		],
 		'2' => [
-			'title' => 'Разработка',
-			'text' => 'В разработке мы используем гибкие методологии, оптимальные
-                                решения, передовые технологии
-                                и корректировки в процессе создания, поэтому проект остается живым в процессе
-                                реализации. Мы остаёмся с вами на связи на каждом этапе разработки для достижения
-                                лучшего результата',
+			'title' => 'Development',
+			'text' => 'We use agile methodologies, optimal solutions, advanced technologies and adjustments throughout the development process, so the project remains alive in the implementation process. We stay in touch with you at every stage of development to achieve the best result.',
 		],
 		'3' => [
-			'title' => 'Исследования',
-			'text' => 'Исследовательская деятельность – наше тайное оружие. Мы
-                                сохраняем первенство в
-                                использовании наукоёмких технологий на практике, постоянно участвуем в научных и
-                                инженерных исследованиях, в нашем штате работают действующие сотрудники топовых
-                                российских и зарубежных ВУЗов. Также обеспечиваем поддержку в развитии студентов',
+			'title' => 'Research',
+			'text' => 'Research is our secret weapon. We keep the first place in the use of science-intensive technologies in practice, we constantly participate in scientific and engineering research. Our staff includes active employees of top Russian and foreign universities.',
 		],
 	],
 	'career' => [
-		'text' => 'Наша команда – наша ценность, поэтому мы создаём лучшие условия для работы каждого сотрудника.
-                        Присоединяйтесь к нашей команде, чтобы заниматься решением сложных, но интересных задач и
-                        развиваться вместе.',
+		'text' => 'Our team is our main value, that\'s why we make the best working conditions for every employee. Join our team to solve challenging but interesting tasks and develop together.',
 	],
 ];
