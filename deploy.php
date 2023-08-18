@@ -6,6 +6,7 @@ require 'recipe/laravel.php';
 // Config
 
 set('repository', 'https://github.com/AntonLeontev/sudo.git');
+set('keep_releases', 3);
 
 add('shared_files', []);
 add('shared_dirs', []);
@@ -32,5 +33,5 @@ task('config:clear', function () {
 });
 
 // Hooks
-after('deploy:publish', 'build');
+after('deploy:vendors', 'build');
 after('deploy:failed', 'deploy:unlock');
