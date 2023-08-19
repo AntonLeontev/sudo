@@ -98,18 +98,18 @@
     &__wrap {
         padding-top: 35px;
     }
-    span {
-        display: inline-block;
-        margin-bottom: 11px;
-        font-weight: 400;
-        font-size: 24px;
-        line-height: 120%;
-        /* or 19px */
+    // span {
+    //     display: inline-block;
+    //     margin-bottom: 11px;
+    //     font-weight: 400;
+    //     font-size: 24px;
+    //     line-height: 120%;
+    //     /* or 19px */
 
-        letter-spacing: 0.02em;
+    //     letter-spacing: 0.02em;
 
-        color: #FFFFFF;
-    }
+    //     color: #FFFFFF;
+    // }
     p {
         max-width: 609px;
         margin-bottom: 52px;
@@ -172,16 +172,10 @@
         &__wrap {
             padding-left: 50%;
         }
-        span {
-
-        }
         p {
             font-weight: 500;
             font-size: 24px;
             line-height: 137%;
-        }
-        button {
-
         }
     }
 }

@@ -45,9 +45,9 @@ class HomePageSlideResource extends Resource
 							->default(HomePageSlide::orderByDesc('position')->first('position')->position + 1)
 							->required()
 							->sortable(),
-						// Color::make('Цвет текста', 'text_color')
-						// 	->default('#000000')
-						// 	->hideOnIndex(),
+						Color::make('Цвет текста', 'text_color')
+							->default('#000000')
+							->hideOnIndex(),
 						Image::make('Фон', 'image')
 							->hint('Ширина изображение должна быть более или равна 1900px, высота более или равна 800px')
 							->dir('homePageSlides'),

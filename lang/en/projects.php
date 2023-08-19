@@ -2,7 +2,7 @@
 
 return [
 	'title' => 'Projects',
-	'h1' => 'Completed projects',
+	'h1' => 'Our projects',
 	'subtitle' => 'Our projects include a large number of developments of complex computational software solutions in various fields of activity.',
 	'text' => '*Most of our projects are NDA protected, so we can only give a general description of the completed projects.',
 	'list' => [

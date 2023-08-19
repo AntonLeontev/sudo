@@ -2,3 +2,17 @@
     position: relative;
     overflow: hidden;
 }
+
+.swiper-slide {
+	&__text {
+		p {
+			margin-top: 10px;
+			color: inherit;
+			font-size: 16px;
+		}
+	}
+
+	&__number {
+		font-size: 24px;
+	}
+}

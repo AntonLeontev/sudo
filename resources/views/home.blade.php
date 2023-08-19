@@ -232,7 +232,7 @@
 
 
 
-        const indexBlockBbtn = document.querySelectorAll('.index-block__btn')
+        const indexBlockBbtn = document.querySelectorAll('.request-button')
         const modalFeedback = document.querySelector('.modal-feedback')
 
 
