@@ -27,7 +27,7 @@
                 <li><a href="mailto:{{ contacts()->email }}">{{ contacts()->email }}</a></li>
             </ul>
         </div>
-        <p class="footer__copyright">{{ __('footer.copyright') }}</p>
+        <p class="footer__copyright">{{ __('footer.copyright', ['year' => now()->format('Y')]) }}</p>
     </div>
 
 </footer>

@@ -12,5 +12,5 @@ return [
 	'contacts' => 'Contacts',
 	'information' => 'Information',
 	'policy' => 'Privacy Policy',
-	'copyright' => '© 2022, Sudo LLC. All rights reserved',
+	'copyright' => '© :year, Sudo LLC. All rights reserved',
 ];
