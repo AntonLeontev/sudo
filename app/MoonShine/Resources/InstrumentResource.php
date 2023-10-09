@@ -4,7 +4,6 @@ namespace App\MoonShine\Resources;
 
 use App\Models\Instrument;
 use Illuminate\Database\Eloquent\Model;
-
 use Illuminate\Support\Facades\Cache;
 use MoonShine\Actions\FiltersAction;
 use MoonShine\Decorations\Block;
@@ -12,7 +11,6 @@ use MoonShine\Decorations\Column;
 use MoonShine\Decorations\Grid;
 use MoonShine\Decorations\Heading;
 use MoonShine\Fields\BelongsTo;
-use MoonShine\Fields\ID;
 use MoonShine\Fields\Number;
 use MoonShine\Fields\SwitchBoolean;
 use MoonShine\Fields\Text;
@@ -23,90 +21,90 @@ use MoonShine\Resources\Resource;
 
 class InstrumentResource extends Resource
 {
-	public static string $model = Instrument::class;
+    public static string $model = Instrument::class;
 
-	public static string $title = 'Инструменты';
+    public static string $title = 'Инструменты';
 
-	public static string $orderType = 'ASC';
+    public static string $orderType = 'ASC';
 
-	protected bool $editInModal = false;
+    protected bool $editInModal = false;
 
-	public function fields(): array
-	{
-		return [
-			Number::make('Позиция в категории', 'position')
-				->sortable()
-				->hideOnForm(),
-			Grid::make([
-				Column::make([
+    public function fields(): array
+    {
+        return [
+            Number::make('Позиция в категории', 'position')
+                ->sortable()
+                ->hideOnForm(),
+            Grid::make([
+                Column::make([
 
-					Block::make([
-						Heading::make('Русский'),
-						Text::make('Название', 'title_ru')
-							->sortable()
-							->required(),
-						Text::make('Подзаголовок', 'subtitle_ru'),
-						TinyMce::make('Описание', 'description_ru')
-							->plugins('link lists fullscreen wordcount table preview')
-							->toolbar('undo redo | blocks fontsize | alignleft aligncenter alignright | bold italic underline | link | bullist numlist')
-							->hideOnIndex(),
-					]),
-						
-				])->columnSpan(5),
-					
-				Column::make([
-					Block::make([
-						Heading::make('English'),
-						Text::make('Title', 'title_en')
-							->hideOnIndex()
-							->required(),
-						Text::make('Subtitle', 'subtitle_en')
-							->hideOnIndex(),
-						TinyMce::make('Description', 'description_en')
-							->plugins('link lists fullscreen wordcount table preview')
-							->toolbar('undo redo | blocks fontsize | alignleft aligncenter alignright | bold italic underline | link | bullist numlist')
-							->hideOnIndex(),
-					]),
-				])->columnSpan(5),
+                    Block::make([
+                        Heading::make('Русский'),
+                        Text::make('Название', 'title_ru')
+                            ->sortable()
+                            ->required(),
+                        Text::make('Подзаголовок', 'subtitle_ru'),
+                        TinyMce::make('Описание', 'description_ru')
+                            ->plugins('link lists fullscreen wordcount table preview')
+                            ->toolbar('undo redo | blocks fontsize | alignleft aligncenter alignright | bold italic underline | link | bullist numlist')
+                            ->hideOnIndex(),
+                    ]),
 
-				Column::make([
-					Block::make([
-						BelongsTo::make('Категория', 'category_id', 'title_ru')
-							->sortable(),
-						Number::make('Позиция в категории', 'position')
-							->hideOnIndex()
-							->default(Instrument::max('position') + 1)
-							->required(),
-						SwitchBoolean::make('Кнопка с заявкой', 'has_request_button')
-							->default(1)
-							->hideOnIndex()
-							->hint('Если активно, то будет показана кнопка "Отправить заявку". Если нет - то кнопка "Перейти" со ссылкой ниже'),
-						Url::make('Ссылка', 'link')
-							->copy()
-							->hideOnIndex(),
-						SwitchBoolean::make('Активен', 'enabled')
-							->default(1),
+                ])->columnSpan(5),
 
-					]),
-				])->columnSpan(2),
-			]),
+                Column::make([
+                    Block::make([
+                        Heading::make('English'),
+                        Text::make('Title', 'title_en')
+                            ->hideOnIndex()
+                            ->required(),
+                        Text::make('Subtitle', 'subtitle_en')
+                            ->hideOnIndex(),
+                        TinyMce::make('Description', 'description_en')
+                            ->plugins('link lists fullscreen wordcount table preview')
+                            ->toolbar('undo redo | blocks fontsize | alignleft aligncenter alignright | bold italic underline | link | bullist numlist')
+                            ->hideOnIndex(),
+                    ]),
+                ])->columnSpan(5),
+
+                Column::make([
+                    Block::make([
+                        BelongsTo::make('Категория', 'category_id', 'title_ru')
+                            ->sortable(),
+                        Number::make('Позиция в категории', 'position')
+                            ->hideOnIndex()
+                            ->default(Instrument::max('position') + 1)
+                            ->required(),
+                        SwitchBoolean::make('Кнопка с заявкой', 'has_request_button')
+                            ->default(1)
+                            ->hideOnIndex()
+                            ->hint('Если активно, то будет показана кнопка "Отправить заявку". Если нет - то кнопка "Перейти" со ссылкой ниже'),
+                        Url::make('Ссылка', 'link')
+                            ->copy()
+                            ->hideOnIndex(),
+                        SwitchBoolean::make('Активен', 'enabled')
+                            ->default(1),
+
+                    ]),
+                ])->columnSpan(2),
+            ]),
         ];
-	}
+    }
 
-	public function rules(Model $item): array
-	{
-	    return [
-			'title_ru' => ['required', 'string', 'max:255'],
-			'title_en' => ['required', 'string', 'max:255'],
-			'subtitle_ru' => ['nullable', 'string', 'max:255'],
-			'subtitle_en' => ['nullable', 'string', 'max:255'],
-			'description_ru' => ['nullable', 'string', 'max:2000'],
-			'description_en' => ['nullable', 'string', 'max:2000'],
-			'link' => ['nullable', 'string', 'max:255', 'url'],
-			'enabled' => ['nullable', 'boolean'],
-			'position' => ['required', 'integer'],
-			'has_request_button' => ['boolean'],
-		];
+    public function rules(Model $item): array
+    {
+        return [
+            'title_ru' => ['required', 'string', 'max:255'],
+            'title_en' => ['required', 'string', 'max:255'],
+            'subtitle_ru' => ['nullable', 'string', 'max:255'],
+            'subtitle_en' => ['nullable', 'string', 'max:255'],
+            'description_ru' => ['nullable', 'string', 'max:2000'],
+            'description_en' => ['nullable', 'string', 'max:2000'],
+            'link' => ['nullable', 'string', 'max:255', 'url'],
+            'enabled' => ['nullable', 'boolean'],
+            'position' => ['required', 'integer'],
+            'has_request_button' => ['boolean'],
+        ];
     }
 
     public function search(): array
@@ -117,8 +115,8 @@ class InstrumentResource extends Resource
     public function filters(): array
     {
         return [
-			BelongsToFilter::make('Категория','category_id', 'title_ru'),
-		];
+            BelongsToFilter::make('Категория', 'category_id', 'title_ru'),
+        ];
     }
 
     public function actions(): array
@@ -128,23 +126,23 @@ class InstrumentResource extends Resource
         ];
     }
 
-	protected function afterUpdated(Model $item)
-	{
-		Cache::delete('instruments');
-	}
+    protected function afterUpdated(Model $item)
+    {
+        Cache::delete('instruments');
+    }
 
-	protected function afterCreated(Model $item)
-	{
-		Cache::delete('instruments');
-	}
+    protected function afterCreated(Model $item)
+    {
+        Cache::delete('instruments');
+    }
 
-	protected function afterDeleted(Model $item)
-	{
-		Cache::delete('instruments');
-	}
+    protected function afterDeleted(Model $item)
+    {
+        Cache::delete('instruments');
+    }
 
-	protected function afterMassDeleted(Model $item)
-	{
-		Cache::delete('instruments');
-	}
+    protected function afterMassDeleted(Model $item)
+    {
+        Cache::delete('instruments');
+    }
 }

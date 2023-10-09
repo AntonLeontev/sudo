@@ -14,17 +14,17 @@ return new class extends Migration
     {
         Schema::create('instruments', function (Blueprint $table) {
             $table->id();
-			$table->string('title_ru');
-			$table->string('title_en');
-			$table->string('subtitle_ru')->nullable();
-			$table->string('subtitle_en')->nullable();
-			$table->text('description_ru')->nullable();
-			$table->text('description_en')->nullable();
-			$table->string('link')->nullable();
-			$table->foreignIdFor(Category::class)
-				->constrained()
-				->cascadeOnDelete();
-			$table->boolean('enabled')->default(1);
+            $table->string('title_ru');
+            $table->string('title_en');
+            $table->string('subtitle_ru')->nullable();
+            $table->string('subtitle_en')->nullable();
+            $table->text('description_ru')->nullable();
+            $table->text('description_en')->nullable();
+            $table->string('link')->nullable();
+            $table->foreignIdFor(Category::class)
+                ->constrained()
+                ->cascadeOnDelete();
+            $table->boolean('enabled')->default(1);
             $table->timestamps();
         });
     }

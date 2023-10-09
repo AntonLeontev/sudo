@@ -13,13 +13,13 @@ return new class extends Migration
     {
         Schema::create('vacancies', function (Blueprint $table) {
             $table->id();
-			$table->string('title_ru');
-			$table->string('title_en');
-			$table->text('description_ru');
-			$table->text('description_en');
-			$table->string('salary_ru')->nullable();
-			$table->string('salary_en')->nullable();
-			$table->boolean('enabled')->default(0);
+            $table->string('title_ru');
+            $table->string('title_en');
+            $table->text('description_ru');
+            $table->text('description_en');
+            $table->string('salary_ru')->nullable();
+            $table->string('salary_en')->nullable();
+            $table->boolean('enabled')->default(0);
             $table->timestamps();
         });
     }

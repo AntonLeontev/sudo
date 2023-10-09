@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Employee;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -11,14 +12,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('home_page_slides', function (Blueprint $table) {
+        Schema::create('socials', function (Blueprint $table) {
             $table->id();
-            $table->string('image');
-            $table->text('text_ru');
-            $table->text('text_en');
-            $table->boolean('enabled')->default(0);
-            $table->string('text_color')->default('#000');
-            $table->smallInteger('position')->default(1);
+            $table->foreignIdFor(Employee::class)->constrained()->cascadeOnDelete();
+            $table->string('link');
             $table->timestamps();
         });
     }
@@ -28,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('home_page_slides');
+        Schema::dropIfExists('socials');
     }
 };

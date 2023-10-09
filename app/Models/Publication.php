@@ -9,21 +9,21 @@ class Publication extends Model
 {
     use HasFactory;
 
-	protected $fillable = [
-		'title_ru',
-		'title_en',
-		'author_ru',
-		'author_en',
-		'description_ru',
-		'description_en',
-		'date',
-		'journal',
-		'title_link',
-		'button_link',
-		'position'
-	];
+    protected $fillable = [
+        'title_ru',
+        'title_en',
+        'author_ru',
+        'author_en',
+        'description_ru',
+        'description_en',
+        'date',
+        'journal',
+        'title_link',
+        'button_link',
+        'position',
+    ];
 
-	protected $casts = [
-		'date' => 'date',
-	];
+    protected $casts = [
+        'date' => 'date',
+    ];
 }

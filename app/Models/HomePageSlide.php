@@ -9,11 +9,11 @@ class HomePageSlide extends Model
 {
     use HasFactory;
 
-	protected $fillable = [
-		'image',
-		'text_ru',
-		'text_en',
-		'enabled',
-		'text_color',
-	];
+    protected $fillable = [
+        'image',
+        'text_ru',
+        'text_en',
+        'enabled',
+        'text_color',
+    ];
 }

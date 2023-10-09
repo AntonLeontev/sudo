@@ -10,18 +10,18 @@ class Category extends Model
 {
     use HasFactory;
 
-	protected $fillable = [
-		'title_ru',
-		'title_en',
-	];
+    protected $fillable = [
+        'title_ru',
+        'title_en',
+    ];
 
-	public function instruments(): HasMany
-	{
-		return $this->hasMany(Instrument::class);
-	}
-	
-	public function enabledInstruments(): HasMany
-	{
-		return $this->hasMany(Instrument::class)->where('enabled', 1)->orderBy('position');
-	}
+    public function instruments(): HasMany
+    {
+        return $this->hasMany(Instrument::class);
+    }
+
+    public function enabledInstruments(): HasMany
+    {
+        return $this->hasMany(Instrument::class)->where('enabled', 1)->orderBy('position');
+    }
 }

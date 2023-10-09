@@ -3,11 +3,10 @@
 namespace App\Mail;
 
 use Illuminate\Bus\Queueable;
-use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
+use Illuminate\Mail\Mailables\Address;
 use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
-use Illuminate\Mail\Mailables\Address;
 use Illuminate\Queue\SerializesModels;
 
 class FormSubmit extends Mailable
@@ -18,9 +17,8 @@ class FormSubmit extends Mailable
      * Create a new message instance.
      */
     public function __construct(
-		public $subject
-	)
-    {        
+        public $subject
+    ) {
     }
 
     /**
@@ -30,7 +28,7 @@ class FormSubmit extends Mailable
     {
         return new Envelope(
             subject: $this->subject,
-			from: new Address(config('mail.from.address'), config('mail.from.name')),
+            from: new Address(config('mail.from.address'), config('mail.from.name')),
         );
     }
 

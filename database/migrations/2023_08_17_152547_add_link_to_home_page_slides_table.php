@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::table('home_page_slides', function (Blueprint $table) {
             $table->boolean('has_request_button')->default(1);
-			$table->string('button_text_ru')->nullable();
-			$table->string('button_text_en')->nullable();
-			$table->string('button_link')->nullable();
+            $table->string('button_text_ru')->nullable();
+            $table->string('button_text_en')->nullable();
+            $table->string('button_link')->nullable();
         });
     }
 
@@ -26,11 +26,11 @@ return new class extends Migration
     {
         Schema::table('home_page_slides', function (Blueprint $table) {
             $table->dropColumn([
-				'has_request_button',
-				'button_text_ru',
-				'button_text_en',
-				'button_link',
-			]);
+                'has_request_button',
+                'button_text_ru',
+                'button_text_en',
+                'button_link',
+            ]);
         });
     }
 };

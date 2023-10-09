@@ -3,94 +3,93 @@
 use App\Models\Category;
 use App\Models\Contact;
 use App\Models\HomePageSlide;
-use App\Models\Instrument;
 use App\Models\Publication;
 use App\Models\Vacancy;
 use Illuminate\Support\Collection;
 
 if (! function_exists('slides')) {
-	function slides(): Collection
-	{
-		if (cache('slides', null)) {
-			return cache('slides');
-		}
+    function slides(): Collection
+    {
+        if (cache('slides', null)) {
+            return cache('slides');
+        }
 
-		$slides = HomePageSlide::query()
-			->where('enabled', 1)
-			->orderBy('position')
-			->get();
+        $slides = HomePageSlide::query()
+            ->where('enabled', 1)
+            ->orderBy('position')
+            ->get();
 
-		cache(['slides' => $slides]);
+        cache(['slides' => $slides]);
 
-		return $slides;
-	}
+        return $slides;
+    }
 }
 
 if (! function_exists('publications')) {
-	function publications(): Collection
-	{
-		if (cache('publications', null)) {
-			return cache('publications');
-		}
+    function publications(): Collection
+    {
+        if (cache('publications', null)) {
+            return cache('publications');
+        }
 
-		$publications = Publication::query()
-			->orderBy('position')
-			->get();
+        $publications = Publication::query()
+            ->orderBy('position')
+            ->get();
 
-		cache(['publications' => $publications]);
+        cache(['publications' => $publications]);
 
-		return $publications;
-	}
+        return $publications;
+    }
 }
 
 if (! function_exists('vacancies')) {
-	function vacancies(): Collection
-	{
-		if (cache('vacancies', null)) {
-			return cache('vacancies');
-		}
+    function vacancies(): Collection
+    {
+        if (cache('vacancies', null)) {
+            return cache('vacancies');
+        }
 
-		$vacancies = Vacancy::query()
-			->where('enabled', 1)
-			->get();
+        $vacancies = Vacancy::query()
+            ->where('enabled', 1)
+            ->get();
 
-		cache(['vacancies' => $vacancies]);
+        cache(['vacancies' => $vacancies]);
 
-		return $vacancies;
-	}
+        return $vacancies;
+    }
 }
 
 if (! function_exists('instruments')) {
-	function instruments(): Collection
-	{
-		if (cache('instruments', null)) {
-			return cache('instruments');
-		}
+    function instruments(): Collection
+    {
+        if (cache('instruments', null)) {
+            return cache('instruments');
+        }
 
-		$instruments = Category::query()
-			->with('enabledInstruments')
-			->whereHas('enabledInstruments')
-			->orderBy('position')
-			->get();
+        $instruments = Category::query()
+            ->with('enabledInstruments')
+            ->whereHas('enabledInstruments')
+            ->orderBy('position')
+            ->get();
 
-		cache(['instruments' => $instruments]);
+        cache(['instruments' => $instruments]);
 
-		return $instruments;
-	}
+        return $instruments;
+    }
 }
 
 if (! function_exists('contacts')) {
-	function contacts(): Contact
-	{
-		if (cache('contacts', null)) {
-			return cache('contacts');
-		}
+    function contacts(): Contact
+    {
+        if (cache('contacts', null)) {
+            return cache('contacts');
+        }
 
-		$contacts = Contact::query()
-			->first();
+        $contacts = Contact::query()
+            ->first();
 
-		cache(['contacts' => $contacts]);
+        cache(['contacts' => $contacts]);
 
-		return $contacts;
-	}
+        return $contacts;
+    }
 }
