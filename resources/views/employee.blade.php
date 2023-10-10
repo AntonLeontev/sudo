@@ -9,11 +9,9 @@
 <head>
     <meta charSet="utf-8" />
     <title>{{ $employee->{$name} }} {{ $employee->{$surname} }}</title>
-    <meta name="description"
-        content="QR Code Generator: convert any link, vCard, Facebook, image or video into a QR code, create QR restaurant menu, track QR code scans, customize design" />
-    <meta property="og:title" content="QR Code Generator: Turn any link, vCard or file into a QR code" />
+    <meta property="og:title" content="{{ $employee->{$name} }} {{ $employee->{$surname} }}" />
     <meta property="og:description"
-        content="QR Code Generator: convert any link, vCard, Facebook, image or video into a QR code, create QR restaurant menu, track QR code scans, customize design" />
+        content="Контакты" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="robots" content="noindex,nofollow" />
     <style data-emotion="mui-style-global 1cxld1v">

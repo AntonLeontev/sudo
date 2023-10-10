@@ -17,7 +17,7 @@ class EmployeeController extends Controller
 
         return response($content)
             ->withHeaders([
-                'Content-Type' => 'text/plain',
+                'Content-Type' => 'text/x-vcard;charset=utf-8;',
                 'Cache-Control' => 'no-store, no-cache',
                 'Content-Disposition' => "attachment; filename={$employee->slug}.vcf",
             ]);
