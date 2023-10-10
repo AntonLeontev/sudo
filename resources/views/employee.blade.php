@@ -2,12 +2,13 @@
 <html lang="ru">
 @php
 	$name = 'name_' . app()->getLocale();
+	$surname = 'surname_' . app()->getLocale();
 	$position = 'position_' . app()->getLocale();
 	$address = 'address_' . app()->getLocale();
 @endphp
 <head>
     <meta charSet="utf-8" />
-    <title>{{ $employee->{$name} }}</title>
+    <title>{{ $employee->{$name} }} {{ $employee->{$surname} }}</title>
     <meta name="description"
         content="QR Code Generator: convert any link, vCard, Facebook, image or video into a QR code, create QR restaurant menu, track QR code scans, customize design" />
     <meta property="og:title" content="QR Code Generator: Turn any link, vCard or file into a QR code" />
@@ -1093,7 +1094,7 @@
 									alt draggable="false" />
 							@endunless
 							</div>
-                        <figcaption class="mui-style-1nvhb8h">{{ $employee->{$name} }}</figcaption>
+                        <figcaption class="mui-style-1nvhb8h">{{ $employee->{$name} }} {{ $employee->{$surname} }}</figcaption>
                     </figure>
 					<button
                         class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-disableElevation mui-style-1ew184v"
@@ -1111,8 +1112,15 @@
                                     fill="var(--plus-icon-color, currentColor)"></path>
                             </svg>
 						</span>
-						<span data-lokalise="true" data-key="qrViews.vCard.button" class="mui-style-wqv4tk">
+						<a 
+							href="{{ route('employees.card', $employee->slug) }}" 
+							class="mui-style-wqv4tk" 
+							style="color: white; text-decoration: none"
+						>
 							{{ __('employee.Add to contacts') }}
+						</a>
+						<span data-lokalise="true" data-key="qrViews.vCard.button">
+							
 						</span>
 					</button>
                 </div>
@@ -1148,21 +1156,23 @@
 							</span>
 						</span>
 					</button>
-					<button 
-						type="button"
-						title="Socials" 
-						class="mui-style-fbyc04"
-						:data-active="tab === 'socials'" 
-						@click="tab = 'socials'"
-					>
-						<span class="label">
-							<span
-                                data-lokalise="true" data-key="qrViews.vCard.tabs.third.label"
-                                class="mui-style-wqv4tk">
-								{{ __('employee.Socials') }}
+					@if ($employee->socials->isNotEmpty())
+						<button 
+							type="button"
+							title="Socials" 
+							class="mui-style-fbyc04"
+							:data-active="tab === 'socials'" 
+							@click="tab = 'socials'"
+						>
+							<span class="label">
+								<span
+									data-lokalise="true" data-key="qrViews.vCard.tabs.third.label"
+									class="mui-style-wqv4tk">
+									{{ __('employee.Socials') }}
+								</span>
 							</span>
-						</span>
-					</button>
+						</button>
+					@endif
 				</div>
 
                 <div data-visible="true" x-show="tab === 'contact'" class="mui-style-vfs1k6">
@@ -1361,33 +1371,36 @@
 						@endunless
                     </div>
                 </div>
-                <div data-visible="true" x-show="tab === 'socials'" class="mui-style-vfs1k6">
-                    <div class="mui-style-14kkv6o" style="justify-content: flex-start">
-						@foreach ($employee->socials as $social)
-							<div class="mui-style-1g6etrx" style="width: 100%">
-								<div class="mui-style-1xqmslm">
-									<svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><style>svg{fill:#000000}</style><path d="M323.8 34.8c-38.2-10.9-78.1 11.2-89 49.4l-5.7 20c-3.7 13-10.4 25-19.5 35l-51.3 56.4c-8.9 9.8-8.2 25 1.6 33.9s25 8.2 33.9-1.6l51.3-56.4c14.1-15.5 24.4-34 30.1-54.1l5.7-20c3.6-12.7 16.9-20.1 29.7-16.5s20.1 16.9 16.5 29.7l-5.7 20c-5.7 19.9-14.7 38.7-26.6 55.5c-5.2 7.3-5.8 16.9-1.7 24.9s12.3 13 21.3 13L448 224c8.8 0 16 7.2 16 16c0 6.8-4.3 12.7-10.4 15c-7.4 2.8-13 9-14.9 16.7s.1 15.8 5.3 21.7c2.5 2.8 4 6.5 4 10.6c0 7.8-5.6 14.3-13 15.7c-8.2 1.6-15.1 7.3-18 15.1s-1.6 16.7 3.6 23.3c2.1 2.7 3.4 6.1 3.4 9.9c0 6.7-4.2 12.6-10.2 14.9c-11.5 4.5-17.7 16.9-14.4 28.8c.4 1.3 .6 2.8 .6 4.3c0 8.8-7.2 16-16 16H286.5c-12.6 0-25-3.7-35.5-10.7l-61.7-41.1c-11-7.4-25.9-4.4-33.3 6.7s-4.4 25.9 6.7 33.3l61.7 41.1c18.4 12.3 40 18.8 62.1 18.8H384c34.7 0 62.9-27.6 64-62c14.6-11.7 24-29.7 24-50c0-4.5-.5-8.8-1.3-13c15.4-11.7 25.3-30.2 25.3-51c0-6.5-1-12.8-2.8-18.7C504.8 273.7 512 257.7 512 240c0-35.3-28.6-64-64-64l-92.3 0c4.7-10.4 8.7-21.2 11.8-32.2l5.7-20c10.9-38.2-11.2-78.1-49.4-89zM32 192c-17.7 0-32 14.3-32 32V448c0 17.7 14.3 32 32 32H96c17.7 0 32-14.3 32-32V224c0-17.7-14.3-32-32-32H32z"/></svg>
-								</div>
-								<div class="mui-style-5414kd">
-									<span class="mui-style-1jlcbwk">
-										{{-- <span data-lokalise="true"
-											data-key="qrViews.vCard.listItems.position.title"
-											class="mui-style-1f9c5e6">
-											Profession
-										</span> --}}
-										<span class="mui-style-10hul0x">
-											<a
-												href="{{ $social->link }}"
-												target="_blank" rel="nofollow ugc" class="mui-style-1hj3jxj">
-												{{ $social->link }}
-											</a>
+
+				@if ($employee->socials->isNotEmpty())
+					<div data-visible="true" x-show="tab === 'socials'" class="mui-style-vfs1k6">
+						<div class="mui-style-14kkv6o" style="justify-content: flex-start">
+							@foreach ($employee->socials as $social)
+								<div class="mui-style-1g6etrx" style="width: 100%">
+									<div class="mui-style-1xqmslm">
+										<svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><style>svg{fill:#000000}</style><path d="M323.8 34.8c-38.2-10.9-78.1 11.2-89 49.4l-5.7 20c-3.7 13-10.4 25-19.5 35l-51.3 56.4c-8.9 9.8-8.2 25 1.6 33.9s25 8.2 33.9-1.6l51.3-56.4c14.1-15.5 24.4-34 30.1-54.1l5.7-20c3.6-12.7 16.9-20.1 29.7-16.5s20.1 16.9 16.5 29.7l-5.7 20c-5.7 19.9-14.7 38.7-26.6 55.5c-5.2 7.3-5.8 16.9-1.7 24.9s12.3 13 21.3 13L448 224c8.8 0 16 7.2 16 16c0 6.8-4.3 12.7-10.4 15c-7.4 2.8-13 9-14.9 16.7s.1 15.8 5.3 21.7c2.5 2.8 4 6.5 4 10.6c0 7.8-5.6 14.3-13 15.7c-8.2 1.6-15.1 7.3-18 15.1s-1.6 16.7 3.6 23.3c2.1 2.7 3.4 6.1 3.4 9.9c0 6.7-4.2 12.6-10.2 14.9c-11.5 4.5-17.7 16.9-14.4 28.8c.4 1.3 .6 2.8 .6 4.3c0 8.8-7.2 16-16 16H286.5c-12.6 0-25-3.7-35.5-10.7l-61.7-41.1c-11-7.4-25.9-4.4-33.3 6.7s-4.4 25.9 6.7 33.3l61.7 41.1c18.4 12.3 40 18.8 62.1 18.8H384c34.7 0 62.9-27.6 64-62c14.6-11.7 24-29.7 24-50c0-4.5-.5-8.8-1.3-13c15.4-11.7 25.3-30.2 25.3-51c0-6.5-1-12.8-2.8-18.7C504.8 273.7 512 257.7 512 240c0-35.3-28.6-64-64-64l-92.3 0c4.7-10.4 8.7-21.2 11.8-32.2l5.7-20c10.9-38.2-11.2-78.1-49.4-89zM32 192c-17.7 0-32 14.3-32 32V448c0 17.7 14.3 32 32 32H96c17.7 0 32-14.3 32-32V224c0-17.7-14.3-32-32-32H32z"/></svg>
+									</div>
+									<div class="mui-style-5414kd">
+										<span class="mui-style-1jlcbwk">
+											{{-- <span data-lokalise="true"
+												data-key="qrViews.vCard.listItems.position.title"
+												class="mui-style-1f9c5e6">
+												Profession
+											</span> --}}
+											<span class="mui-style-10hul0x">
+												<a
+													href="{{ $social->link }}"
+													target="_blank" rel="nofollow ugc" class="mui-style-1hj3jxj">
+													{{ $social->link }}
+												</a>
+											</span>
 										</span>
-									</span>
+									</div>
 								</div>
-							</div>
-						@endforeach
+							@endforeach
+						</div>
 					</div>
-                </div>
+				@endif
             </div>
             <div class="mui-style-iqi8ol">
                 <div class="fixedHeight mui-style-zt2422"></div>

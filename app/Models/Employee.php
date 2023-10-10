@@ -12,11 +12,19 @@ class Employee extends Model
 
     protected $fillable = [
         'slug',
-        'name',
+        'name_ru',
+        'name_en',
+        'surname_ru',
+        'surname_en',
         'avatar',
         'phone',
         'email',
-        'position',
+        'position_ru',
+        'position_en',
+    ];
+
+    protected $with = [
+        'socials',
     ];
 
     public function socials(): HasMany

@@ -16,6 +16,8 @@ return new class extends Migration
             $table->string('slug')->unique();
             $table->string('name_ru');
             $table->string('name_en');
+            $table->string('surname_ru')->nullable();
+            $table->string('surname_en')->nullable();
             $table->string('avatar')->nullable();
             $table->string('phone')->nullable();
             $table->string('email')->nullable();

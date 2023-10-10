@@ -41,6 +41,12 @@ class EmployeeResource extends Resource
                     ->hideOnIndex(),
             ]),
             Flex::make([
+                Text::make('Фамилия', 'surname_ru')
+                    ->sortable(),
+                Text::make('Фамилия на английском', 'surname_en')
+                    ->hideOnIndex(),
+            ]),
+            Flex::make([
                 Text::make('Телефон', 'phone')
                     ->mask('7 999 999-99-99'),
                 Email::make('Email', 'email'),
@@ -76,7 +82,7 @@ class EmployeeResource extends Resource
 
     public function search(): array
     {
-        return ['id', 'name_ru', 'name_en', 'slug', 'email', 'phone'];
+        return ['id', 'name_ru', 'name_en', 'surname_ru', 'surname_en', 'slug', 'email', 'phone'];
     }
 
     public function filters(): array
