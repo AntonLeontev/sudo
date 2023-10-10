@@ -573,6 +573,7 @@
         }
 
         .mui-style-1f8tyxl {
+			position: relative;
             display: -webkit-box;
             display: -webkit-flex;
             display: -ms-flexbox;
@@ -1081,6 +1082,18 @@
             <div id="VCard" class="mui-style-1f8tyxl" x-data="{
 				tab: 'contact',
 			}">
+				<div style="position: absolute; top: 10px; right: 20px;">
+					@php
+						if (app()->getLocale() === 'en') {
+							$lang = 'ru';
+						} else {
+							$lang = 'en';
+						}
+					@endphp
+					<a style="color: #fff; font-weight:500;" href="{{ route('language', $lang) }}">
+						{{ strtoupper($lang) }}
+					</a>
+				</div>
                 <div class="mui-style-1aydud8">
                     <figure class="mui-style-mu3z1">
                         <div class="mui-style-ucufxf">
