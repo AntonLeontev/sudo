@@ -10,6 +10,7 @@ use MoonShine\Decorations\Flex;
 use MoonShine\Fields\Email;
 use MoonShine\Fields\HasMany;
 use MoonShine\Fields\Image;
+use MoonShine\Fields\NoInput;
 use MoonShine\Fields\Text;
 use MoonShine\Fields\Url;
 use MoonShine\Resources\Resource;
@@ -28,7 +29,7 @@ class EmployeeResource extends Resource
             Text::make('Slug')
                 ->required()
                 ->hint('Формирует ссылку на карточку пользователя: '.config('app.url').'/vcard/slug')
-                ->sortable(),
+                ->hideOnIndex(),
             Image::make('Фото', 'avatar')
                 ->dir('employees')
                 ->hint('Изображение должно быть более 120х120 px и с соотношением сторон 1:1'),
@@ -63,6 +64,8 @@ class EmployeeResource extends Resource
                 ])
                 ->removable()
                 ->hideOnIndex(),
+            NoInput::make('Ссылка', '', fn ($item) => route('employees.show', $item->slug))
+                ->link(fn ($item) => route('employees.show', $item->slug), true),
         ];
     }
 
