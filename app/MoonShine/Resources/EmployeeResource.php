@@ -69,7 +69,7 @@ class EmployeeResource extends Resource
     public function rules(Model $item): array
     {
         return [
-            'slug' => ['required', 'string', 'min:3', 'max:100', Rule::unique('employees')->ignore($this->item?->id), 'lowercase'],
+            'slug' => ['required', 'alpha_dash', 'min:3', 'max:100', Rule::unique('employees')->ignore($this->item?->id), 'lowercase'],
             'name_ru' => ['required', 'string', 'min:3', 'max:100'],
             'name_en' => ['required', 'string', 'min:3', 'max:100'],
             'avatar' => ['nullable', 'image', Rule::dimensions()->minWidth(120)->minHeight(120)->ratio(1 / 1)],
