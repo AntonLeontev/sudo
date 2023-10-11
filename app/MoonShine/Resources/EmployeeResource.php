@@ -97,7 +97,7 @@ class EmployeeResource extends Resource
             'surname_en' => ['nullable', 'string', 'min:1', 'max:100'],
             'patronimic' => ['nullable', 'string', 'min:1', 'max:100'],
             'avatar' => ['nullable', 'image', Rule::dimensions()->minWidth(120)->minHeight(120)->ratio(1 / 1)],
-            'vcard' => ['nullable', 'file'],
+            'vcard' => ['nullable', 'file', 'mimes:vcf'],
             'email' => ['nullable', 'email', 'max:100'],
             'phone' => ['nullable', 'string', 'size:15'],
             'position_ru' => ['nullable', 'string', 'max:100'],
