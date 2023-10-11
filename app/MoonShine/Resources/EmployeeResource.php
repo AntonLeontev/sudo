@@ -37,7 +37,7 @@ class EmployeeResource extends Resource
                 ->hint('Изображение должно быть более 120х120 px и с соотношением сторон 1:1'),
             File::make('Vcard')
                 ->dir('vcards')
-                ->allowedExtensions(['vcf'])
+                ->allowedExtensions(['vcard', 'vcf'])
                 ->removable()
                 ->keepOriginalFileName()
                 ->hideOnIndex(),
