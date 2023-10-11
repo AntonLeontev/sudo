@@ -1114,7 +1114,7 @@
                     </figure>
 
 					@unless (empty($employee->vcard))
-						<button
+						<a href="/storage/{{ $employee->vcard }}" 
 							class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-disableElevation mui-style-1ew184v"
 							tabindex="0" type="button">
 							<span
@@ -1130,17 +1130,10 @@
 										fill="var(--plus-icon-color, currentColor)"></path>
 								</svg>
 							</span>
-							<a 
-								href="/storage/{{ $employee->vcard }}" 
-								class="mui-style-wqv4tk" 
-								style="color: white; text-decoration: none"
-							>
-								{{ __('employee.Add to contacts') }}
-							</a>
 							<span data-lokalise="true" data-key="qrViews.vCard.button">
-								
+								{{ __('employee.Add to contacts') }}
 							</span>
-						</button>
+						</a>
 					@endunless
                 </div>
 
