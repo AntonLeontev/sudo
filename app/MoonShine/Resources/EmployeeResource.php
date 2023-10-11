@@ -33,9 +33,13 @@ class EmployeeResource extends Resource
                 ->hideOnIndex(),
             Image::make('Фото', 'avatar')
                 ->dir('employees')
+                ->removable()
                 ->hint('Изображение должно быть более 120х120 px и с соотношением сторон 1:1'),
             File::make('Vcard')
                 ->dir('vcards')
+                ->allowedExtensions(['vcf'])
+                ->removable()
+                ->keepOriginalFileName()
                 ->hideOnIndex(),
             Flex::make([
                 Text::make('Имя', 'name_ru')
