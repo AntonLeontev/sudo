@@ -10,4 +10,5 @@ return [
     'Personal website' => 'Personal website',
     'Location' => 'Location',
     'Profession' => 'Profession',
+    'Phone' => 'Phone',
 ];

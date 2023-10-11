@@ -10,4 +10,5 @@ return [
     'Personal website' => 'Сайт',
     'Location' => 'Адрес',
     'Profession' => 'Должность',
+    'Phone' => 'Телефон',
 ];

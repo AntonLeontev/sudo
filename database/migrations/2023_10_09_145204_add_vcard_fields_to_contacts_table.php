@@ -15,6 +15,7 @@ return new class extends Migration
             $table->string('website')->nullable();
             $table->string('location')->nullable();
             $table->string('company_name')->nullable();
+            $table->string('company_phone')->nullable();
         });
     }
 
@@ -27,6 +28,7 @@ return new class extends Migration
             $table->dropColumn('website');
             $table->dropColumn('location');
             $table->dropColumn('company_name');
+            $table->dropColumn('company_phone');
         });
     }
 };

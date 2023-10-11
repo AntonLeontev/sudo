@@ -20,5 +20,6 @@ class Contact extends Model
         'location',
         'website',
         'company_name',
+        'company_phone',
     ];
 }

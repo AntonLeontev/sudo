@@ -40,7 +40,6 @@ Route::view('/career', 'career')->name('career');
 Route::view('/contacts', 'contacts')->name('contacts');
 Route::view('/policy', 'policy')->name('policy');
 Route::get('vcard/{employee:slug}', [EmployeeController::class, 'show'])->name('employees.show');
-Route::get('vcard/{employee:slug}/card', [EmployeeController::class, 'card'])->name('employees.card');
 
 Route::post('/send-mail', function () {
     Mail::to(request()->to)->send(new FormSubmit(request()->subject));

@@ -9,6 +9,7 @@ use MoonShine\Actions\FiltersAction;
 use MoonShine\Decorations\Block;
 use MoonShine\Decorations\Flex;
 use MoonShine\Fields\Email;
+use MoonShine\Fields\Phone;
 use MoonShine\Fields\Text;
 use MoonShine\Fields\Url;
 use MoonShine\Resources\Resource;
@@ -56,6 +57,9 @@ class ContactResource extends Resource
                         ->hideOnIndex(),
                     Text::make('Название компании', 'company_name')
                         ->hideOnIndex(),
+                    Phone::make('Телефон', 'company_phone')
+                        ->mask('7 999 999-99-99')
+                        ->hideOnIndex(),
                 ]),
             ]),
         ];
@@ -71,6 +75,7 @@ class ContactResource extends Resource
             'feedback_email' => ['nullable', 'email', 'max:255'],
             'resume_email' => ['nullable', 'email', 'max:255'],
             'tools_email' => ['nullable', 'email', 'max:255'],
+            'company_phone' => ['nullable', 'string', 'max:255'],
         ];
     }
 

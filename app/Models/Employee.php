@@ -14,13 +14,17 @@ class Employee extends Model
         'slug',
         'name_ru',
         'name_en',
+        'patronimic',
         'surname_ru',
         'surname_en',
         'avatar',
+        'vcard',
         'phone',
         'email',
         'position_ru',
         'position_en',
+        'degree_ru',
+        'degree_en',
     ];
 
     protected $with = [

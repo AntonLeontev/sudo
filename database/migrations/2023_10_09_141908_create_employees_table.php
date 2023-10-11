@@ -18,11 +18,15 @@ return new class extends Migration
             $table->string('name_en');
             $table->string('surname_ru')->nullable();
             $table->string('surname_en')->nullable();
+            $table->string('patronimic')->nullable();
             $table->string('avatar')->nullable();
+            $table->string('vcard')->nullable();
             $table->string('phone')->nullable();
             $table->string('email')->nullable();
             $table->string('position_ru')->nullable();
             $table->string('position_en')->nullable();
+            $table->string('degree_ru')->nullable();
+            $table->string('degree_en')->nullable();
 
             $table->timestamps();
         });

@@ -10,17 +10,4 @@ class EmployeeController extends Controller
     {
         return view('employee', compact('employee'));
     }
-
-    public function card(Employee $employee)
-    {
-        $content = view('files.vcard', compact('employee'))->render();
-
-        return response($content)
-            ->withHeaders([
-                'Content-Type' => 'text/x-vcard;charset=utf-8;',
-                'Cache-Control' => 'no-store, no-cache',
-                'Content-Disposition' => "attachment; filename={$employee->slug}.vcf",
-            ]);
-
-    }
 }
