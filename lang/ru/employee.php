@@ -11,4 +11,5 @@ return [
     'Location' => 'Адрес',
     'Profession' => 'Должность',
     'Phone' => 'Телефон',
+    'to the website' => 'Перейти на сайт',
 ];

@@ -6,6 +6,7 @@
 	$position = 'position_' . app()->getLocale();
 	$address = 'address_' . app()->getLocale();
 	$degree = 'degree_' . app()->getLocale();
+	$vcard = 'vcard_' . app()->getLocale();
 	$lang = app()->getLocale() === 'en' ? 'ru' : 'en';
 @endphp
 <head>
@@ -1088,8 +1089,9 @@
 					</a>
 				</div>
 				<div style="position: absolute; top: 10px; left: 20px;">
-					<a href="/">
+					<a href="/" style="text-decoration: none">
 						<img src="/images/logo.svg" alt="Sudo logo" width="60px">
+						<div style="color: white">{{ __('employee.to the website') }}</div>
 					</a>
 				</div>
                 <div class="mui-style-1aydud8">
@@ -1113,8 +1115,8 @@
 						@endunless
                     </figure>
 
-					@unless (empty($employee->vcard))
-						<a href="/storage/{{ $employee->vcard }}" 
+					@unless (empty($employee->{$vcard}))
+						<a href="/storage/{{ $employee->{$vcard} }}" 
 							class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-disableElevation mui-style-1ew184v"
 							tabindex="0" type="button">
 							<span
