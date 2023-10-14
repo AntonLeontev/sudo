@@ -1191,6 +1191,32 @@
 
                 <div data-visible="true" x-show="tab === 'contact'" class="mui-style-vfs1k6">
                     <div class="mui-style-1b2accp">
+						@unless (empty($employee->{$position}))
+							<div class="mui-style-1g6etrx">
+								<div class="mui-style-1xqmslm">
+									<svg width="24" height="24" viewBox="0 0 24 24"
+										fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path
+											d="M19 4h-4V3a3 3 0 0 0-6 0v1H5a5 5 0 0 0-5 5v10a5 5 0 0 0 5 5h14a5 5 0 0 0 5-5V9a5 5 0 0 0-5-5Zm-8-1a1 1 0 0 1 2 0v2a1 1 0 0 1-2 0V3Zm11 16a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3V9a3 3 0 0 1 3-3h4.18a2.98 2.98 0 0 0 5.64 0H19a3 3 0 0 1 3 3v10Zm-12-9H5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1v-8a1 1 0 0 0-1-1Zm-1 8H6v-6h3v6Zm11-3a1 1 0 0 1-1 1h-5a1 1 0 0 1 0-2h5a1 1 0 0 1 1 1Zm0-4a1 1 0 0 1-1 1h-5a1 1 0 0 1 0-2h5a1 1 0 0 1 1 1Zm-2 8a1 1 0 0 1-1 1h-3a1 1 0 0 1 0-2h3a1 1 0 0 1 1 1Z"
+											fill="var(--id-badge-icon-color, currentColor)"></path>
+									</svg>
+								</div>
+								<div class="mui-style-5414kd">
+									<span class="mui-style-1jlcbwk">
+										<span data-lokalise="true"
+											data-key="qrViews.vCard.listItems.position.title"
+											class="mui-style-1f9c5e6">
+											{{ __('employee.Profession') }}
+										</span>
+										<span
+											class="mui-style-10hul0x">
+											{{ $employee->{$position} }}
+										</span>
+									</span>
+								</div>
+							</div>
+						@endunless
+						
 						@unless (empty($employee->phone))
 							<div class="mui-style-1g6etrx">
 								<div class="mui-style-1xqmslm"><svg width="24" height="24" viewBox="0 0 24 24"
@@ -1256,42 +1282,6 @@
 								</div>
 							</div>
 						@endunless
-
-						@unless (empty(contacts()->location))
-							<div class="mui-style-1g6etrx">
-								<div class="mui-style-1xqmslm">
-									<svg width="24" height="24" viewBox="0 0 24 24"
-										fill="none" xmlns="http://www.w3.org/2000/svg">
-										<g clip-path="url(#id71363)" fill="var(--map-marker-icon-color, currentColor)">
-											<path d="M12 6a4 4 0 1 0 0 8 4 4 0 0 0 0-8Zm0 6a2 2 0 1 1 0-4 2 2 0 0 1 0 4Z">
-											</path>
-											<path
-												d="M12 24a5.27 5.27 0 0 1-4.31-2.2c-3.812-5.257-5.745-9.209-5.745-11.747a10.055 10.055 0 0 1 20.11 0c0 2.538-1.933 6.49-5.744 11.747a5.271 5.271 0 0 1-4.31 2.2Zm0-21.819a7.883 7.883 0 0 0-7.874 7.874c0 2.01 1.893 5.727 5.33 10.466a3.145 3.145 0 0 0 5.09 0c3.435-4.739 5.328-8.456 5.328-10.466A7.883 7.883 0 0 0 12 2.181Z">
-											</path>
-										</g>
-										<defs>
-											<clipPath id="id71363">
-												<path fill="#fff" d="M0 0h24v24H0z"></path>
-											</clipPath>
-										</defs>
-									</svg>
-								</div>
-								<div class="mui-style-5414kd">
-									<span class="mui-style-1jlcbwk">
-										<span data-lokalise="true"
-											data-key="qrViews.vCard.listItems.location.title"
-											class="mui-style-1f9c5e6">
-											{{ __('employee.Location') }}
-										</span>
-										<a
-											href="{{ contacts()->location }}"
-											target="_blank" rel="nofollow ugc" class="mui-style-1hj3jxj">
-											{{ contacts()->{$address} }}
-										</a>
-									</span>
-								</div>
-							</div>
-						@endunless
                     </div>
                 </div>
 
@@ -1323,32 +1313,6 @@
 										</span>
 										<span class="mui-style-10hul0x">
 											{{ contacts()->company_name }}
-										</span>
-									</span>
-								</div>
-							</div>
-						@endunless
-
-						@unless (empty($employee->{$position}))
-							<div class="mui-style-1g6etrx">
-								<div class="mui-style-1xqmslm">
-									<svg width="24" height="24" viewBox="0 0 24 24"
-										fill="none" xmlns="http://www.w3.org/2000/svg">
-										<path
-											d="M19 4h-4V3a3 3 0 0 0-6 0v1H5a5 5 0 0 0-5 5v10a5 5 0 0 0 5 5h14a5 5 0 0 0 5-5V9a5 5 0 0 0-5-5Zm-8-1a1 1 0 0 1 2 0v2a1 1 0 0 1-2 0V3Zm11 16a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3V9a3 3 0 0 1 3-3h4.18a2.98 2.98 0 0 0 5.64 0H19a3 3 0 0 1 3 3v10Zm-12-9H5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1v-8a1 1 0 0 0-1-1Zm-1 8H6v-6h3v6Zm11-3a1 1 0 0 1-1 1h-5a1 1 0 0 1 0-2h5a1 1 0 0 1 1 1Zm0-4a1 1 0 0 1-1 1h-5a1 1 0 0 1 0-2h5a1 1 0 0 1 1 1Zm-2 8a1 1 0 0 1-1 1h-3a1 1 0 0 1 0-2h3a1 1 0 0 1 1 1Z"
-											fill="var(--id-badge-icon-color, currentColor)"></path>
-									</svg>
-								</div>
-								<div class="mui-style-5414kd">
-									<span class="mui-style-1jlcbwk">
-										<span data-lokalise="true"
-											data-key="qrViews.vCard.listItems.position.title"
-											class="mui-style-1f9c5e6">
-											{{ __('employee.Profession') }}
-										</span>
-										<span
-											class="mui-style-10hul0x">
-											{{ $employee->{$position} }}
 										</span>
 									</span>
 								</div>
@@ -1405,6 +1369,42 @@
 											target="_blank" rel="nofollow ugc" title="{{ contacts()->website }}"
 											class="mui-style-1hj3jxj"><span class="mui-style-skz180"><span
 													class="mui-style-wqv4tk">{{ contacts()->website }}</span></span></a></span>
+								</div>
+							</div>
+						@endunless
+
+						@unless (empty(contacts()->location))
+							<div class="mui-style-1g6etrx">
+								<div class="mui-style-1xqmslm">
+									<svg width="24" height="24" viewBox="0 0 24 24"
+										fill="none" xmlns="http://www.w3.org/2000/svg">
+										<g clip-path="url(#id71363)" fill="var(--map-marker-icon-color, currentColor)">
+											<path d="M12 6a4 4 0 1 0 0 8 4 4 0 0 0 0-8Zm0 6a2 2 0 1 1 0-4 2 2 0 0 1 0 4Z">
+											</path>
+											<path
+												d="M12 24a5.27 5.27 0 0 1-4.31-2.2c-3.812-5.257-5.745-9.209-5.745-11.747a10.055 10.055 0 0 1 20.11 0c0 2.538-1.933 6.49-5.744 11.747a5.271 5.271 0 0 1-4.31 2.2Zm0-21.819a7.883 7.883 0 0 0-7.874 7.874c0 2.01 1.893 5.727 5.33 10.466a3.145 3.145 0 0 0 5.09 0c3.435-4.739 5.328-8.456 5.328-10.466A7.883 7.883 0 0 0 12 2.181Z">
+											</path>
+										</g>
+										<defs>
+											<clipPath id="id71363">
+												<path fill="#fff" d="M0 0h24v24H0z"></path>
+											</clipPath>
+										</defs>
+									</svg>
+								</div>
+								<div class="mui-style-5414kd">
+									<span class="mui-style-1jlcbwk">
+										<span data-lokalise="true"
+											data-key="qrViews.vCard.listItems.location.title"
+											class="mui-style-1f9c5e6">
+											{{ __('employee.Location') }}
+										</span>
+										<a
+											href="{{ contacts()->location }}"
+											target="_blank" rel="nofollow ugc" class="mui-style-1hj3jxj">
+											{{ contacts()->{$address} }}
+										</a>
+									</span>
 								</div>
 							</div>
 						@endunless
