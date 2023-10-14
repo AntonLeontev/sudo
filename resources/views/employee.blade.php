@@ -1055,6 +1055,18 @@
             flex: 1;
         }
     </style>
+	<style>
+		.to-site {
+			color: white;
+			max-width: 80px;
+		}
+
+		@media (min-width: 500px) {
+			.to-site {
+				max-width: 200px;
+			}
+		}
+	</style>
     <link rel="preload"
         data-href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800&amp;display=swap" />
     <link rel="stylesheet"
@@ -1091,7 +1103,7 @@
 				<div style="position: absolute; top: 10px; left: 20px;">
 					<a href="/" style="text-decoration: none">
 						<img src="/images/logo.svg" alt="Sudo logo" width="60px">
-						<div style="color: white">{{ __('employee.to the website') }}</div>
+						<div class="to-site">{{ __('employee.to the website') }}</div>
 					</a>
 				</div>
                 <div class="mui-style-1aydud8">
@@ -1216,7 +1228,7 @@
 								</div>
 							</div>
 						@endunless
-						
+
 						@unless (empty($employee->phone))
 							<div class="mui-style-1g6etrx">
 								<div class="mui-style-1xqmslm"><svg width="24" height="24" viewBox="0 0 24 24"
