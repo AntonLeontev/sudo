@@ -7,6 +7,7 @@
 	$address = 'address_' . app()->getLocale();
 	$degree = 'degree_' . app()->getLocale();
 	$vcard = 'vcard_' . app()->getLocale();
+	$companyName = 'company_name_' . app()->getLocale();
 	$lang = app()->getLocale() === 'en' ? 'ru' : 'en';
 @endphp
 <head>
@@ -1299,7 +1300,7 @@
 
                 <div data-visible="true" class="mui-style-vfs1k6" x-show="tab === 'company'">
                     <div class="mui-style-1b2accp">
-						@unless (empty(contacts()->company_name))
+						@unless (empty(contacts()->{$companyName}))
 							<div class="mui-style-1g6etrx">
 								<div class="mui-style-1xqmslm">
 									<svg width="24" height="24" viewBox="0 0 24 24"
@@ -1324,7 +1325,7 @@
 											{{ __('employee.Company') }}
 										</span>
 										<span class="mui-style-10hul0x">
-											{{ contacts()->company_name }}
+											{{ contacts()->{$companyName} }}
 										</span>
 									</span>
 								</div>

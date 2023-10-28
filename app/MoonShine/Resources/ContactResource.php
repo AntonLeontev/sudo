@@ -55,7 +55,9 @@ class ContactResource extends Resource
                         ->hideOnIndex(),
                     Url::make('Ссылка на карту с адресом', 'location')
                         ->hideOnIndex(),
-                    Text::make('Название компании', 'company_name')
+                    Text::make('Название компании', 'company_name_ru')
+                        ->hideOnIndex(),
+                    Text::make('Company name', 'company_name_en')
                         ->hideOnIndex(),
                     Phone::make('Телефон', 'company_phone')
                         ->mask('7 999 999-99-99')
@@ -76,6 +78,8 @@ class ContactResource extends Resource
             'resume_email' => ['nullable', 'email', 'max:255'],
             'tools_email' => ['nullable', 'email', 'max:255'],
             'company_phone' => ['nullable', 'string', 'max:255'],
+            'company_name_ru' => ['nullable', 'string', 'max:255'],
+            'company_name_en' => ['nullable', 'string', 'max:255'],
         ];
     }
 
