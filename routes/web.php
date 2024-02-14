@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\EmployeeController;
 use App\Mail\FormSubmit;
+use App\Mail\HorizonRequest;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 
@@ -39,10 +40,18 @@ Route::view('/calculations', 'calculations')->name('calculations');
 Route::view('/career', 'career')->name('career');
 Route::view('/contacts', 'contacts')->name('contacts');
 Route::view('/policy', 'policy')->name('policy');
+
 Route::get('vcard/{employee:slug}', [EmployeeController::class, 'show'])->name('employees.show');
 
 Route::post('/send-mail', function () {
     Mail::to(request()->to)->send(new FormSubmit(request()->subject));
+
+    return response()->json('ok');
+});
+
+Route::view('horizon', 'horizon')->name('horizon');
+Route::post('horizon', function () {
+    Mail::to(contacts()->feedback_email)->send(new HorizonRequest());
 
     return response()->json('ok');
 });
