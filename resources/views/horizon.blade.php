@@ -393,11 +393,6 @@
 
 			let data = new FormData(event.target);
 
-			// data = {
-			// 	name: data.get('name'),
-			// 	phone: data.get('phone'),
-			// };
-
 			axios
 				.post('horizon', data)
 				.then(resp => {
