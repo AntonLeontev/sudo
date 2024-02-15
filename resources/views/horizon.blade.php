@@ -292,8 +292,8 @@
                             Оставьте заявку и&nbsp;наши менеджеры проконсультируют вас по
                             любому вопросу или&nbsp;напишите на&nbsp;почту
                         </div>
-                        <a href="mailto:contact@gorizont.ru" class="footer__mail title title_h3">
-                            contact@gorizont.ru
+                        <a href="mailto:horizon@sudo.team" class="footer__mail title title_h3">
+                            horizon@sudo.team
                         </a>
                         <a href="" class="footer__btn button button_outline _icon-arrow">
                             Скачать презентацию
