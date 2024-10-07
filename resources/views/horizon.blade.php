@@ -2,7 +2,7 @@
 <html lang="ru" class="">
 
 <head>
-    <title>Главная</title>
+    <title>{{ __('horizon.title') }}</title>
     <meta charset="UTF-8" />
     <meta name="format-detection" content="telephone=no" />
     <!-- <style>body{opacity: 0;}</style> -->
@@ -23,6 +23,18 @@
                         <img src="/horizon-dir/img/logo.png" alt="Logo" />
                     </picture>
                 </a>
+				<div class="header__lang lang">
+					@php
+						if (app()->getLocale() === 'en') {
+							$lang = 'ru';
+						} else {
+							$lang = 'en';
+						}
+					@endphp
+					<a href="{{ route('language', $lang) }}">
+						{{ strtoupper($lang) }}
+					</a>
+				</div>
                 <div class="header__menu menu">
                     <button type="button" class="menu__icon icon-menu">
                         <span></span>
@@ -31,28 +43,31 @@
                         <ul class="menu__list">
                             <li class="menu__item">
                                 <a href="#" class="menu__link" data-goto-header
-                                    data-goto=".functions">Функционал</a>
+                                    data-goto=".functions">{{ __('horizon.menu.1') }}</a>
                             </li>
                             <li class="menu__item">
                                 <a href="#" class="menu__link" data-goto-header
-                                    data-goto=".benefits">Преимущества</a>
+                                    data-goto=".benefits">{{ __('horizon.menu.2') }}</a>
                             </li>
                             <li class="menu__item">
-                                <a href="#" class="menu__link" data-goto-header data-goto=".about">Алгоритм
-                                    работы</a>
+                                <a href="#" class="menu__link" data-goto-header data-goto=".about">
+									{{ __('horizon.menu.3') }}
+								</a>
                             </li>
                             <li class="menu__item">
-                                <a href="#" class="menu__link" data-goto-header data-goto=".variants">Варианты
-                                    внедрения</a>
+                                <a href="#" class="menu__link" data-goto-header data-goto=".variants">
+									{{ __('horizon.menu.4') }}
+								</a>
                             </li>
                             <li class="menu__item">
-                                <a href="#" class="menu__link" data-goto-header data-goto=".footer">Контакты</a>
+                                <a href="#" class="menu__link" data-goto-header data-goto=".footer">{{ __('horizon.menu.5') }}</a>
                             </li>
                         </ul>
                         <div class="menu__buttons">
-                            <a href="" class="button _icon-arrow" data-goto-header data-goto=".footer">Оставить
-                                заявку</a>
-                            <a href="" class="button button_outline _icon-arrow">Скачать презентацию</a>
+                            <a href="" class="button _icon-arrow" data-goto-header data-goto=".footer">
+								{{ __('horizon.menu.6') }}
+							</a>
+                            <a href="" class="button button_outline _icon-arrow">{{ __('horizon.menu.7') }}</a>
                         </div>
                     </nav>
                 </div>
@@ -67,14 +82,13 @@
                 </picture>
                 <div class="hero__container">
                     <div class="hero__content wow animate__zoomIn">
-                        <h1 class="hero__title title title_h1">Горизонт</h1>
+                        <h1 class="hero__title title title_h1">{{ __('horizon.1.h1') }}</h1>
                         <div class="hero__text text-accent">
-                            Програмный комплекс для&nbsp;глубокой автоматизации
-                            проектирования газо-&nbsp;и&nbsp;электросетей
+                            {{ __('horizon.1.subtitle') }}
                         </div>
                         <button class="hero__btn button _icon-arrow" data-goto-header data-goto=".footer"
                             type="button">
-                            Оставить заявку
+                            {{ __('horizon.1.btn') }}
                         </button>
                     </div>
                 </div>
@@ -83,7 +97,7 @@
                 <div class="functions__container">
                     <h2 class="functions__title title title_line wow animate__fadeInUp" data-watch-once
                         data-watch-threshold="1" data-watch>
-                        Функционал
+                        {{ __('horizon.2.title') }}
                     </h2>
                     <ol class="functions__list">
                         <li class="functions__item wow animate__fadeInRight">
@@ -92,7 +106,7 @@
                                     <img src="/horizon-dir/img/icons/functions/01.svg" alt="Image" />
                                 </div>
                                 <div class="functions-item__text">
-                                    Создает карту путей прокладки трасс в заданной локации
+                                    {{ __('horizon.2.1') }}
                                 </div>
                             </div>
                         </li>
@@ -102,7 +116,7 @@
                                     <img src="/horizon-dir/img/icons/functions/02.svg" alt="Image" />
                                 </div>
                                 <div class="functions-item__text">
-                                    Определяет уровень сложности прохождения каждого участка
+                                    {{ __('horizon.2.2') }}
                                 </div>
                             </div>
                         </li>
@@ -112,7 +126,7 @@
                                     <img src="/horizon-dir/img/icons/functions/03.svg" alt="Image" />
                                 </div>
                                 <div class="functions-item__text">
-                                    Предлагает набор оптимальных маршрутов по разным критериям
+                                    {{ __('horizon.2.3') }}
                                 </div>
                             </div>
                         </li>
@@ -122,7 +136,7 @@
                                     <img src="/horizon-dir/img/icons/functions/04.svg" alt="Image" />
                                 </div>
                                 <div class="functions-item__text">
-                                    Предоставляет оценку выбранного решения
+                                    {{ __('horizon.2.4') }}
                                 </div>
                             </div>
                         </li>
@@ -132,8 +146,7 @@
                                     <img src="/horizon-dir/img/icons/functions/05.svg" alt="Image" />
                                 </div>
                                 <div class="functions-item__text">
-                                    Формирует ключевые документы для получения разрешения на
-                                    строительство
+                                    {{ __('horizon.2.5') }}
                                 </div>
                             </div>
                         </li>
@@ -144,37 +157,33 @@
                 <div class="benefits__container">
                     <h2 class="benefits__title title title_line wow animate__fadeInUp" data-watch-once
                         data-watch-threshold="1" data-watch>
-                        Преимущества
+                        {{ __('horizon.3.title') }}
                     </h2>
                     <div class="benefits__items wow animate__fadeIn">
                         <ul class="benefits__list">
-                            <li class="text">Проектирование в автоматическом режиме</li>
+                            <li class="text">{{ __('horizon.3.1') }}</li>
                             <li class="text">
-                                Соответствие требованиям ГОСТ и СНиП, локальным нормативным
-                                документам
+                                {{ __('horizon.3.2') }}
                             </li>
                             <li class="text">
-                                Высокая скорость построения нового маршрута
+                                {{ __('horizon.3.3') }}
                             </li>
                             <li class="text">
-                                Учёт всех объектов и коммуникации на пути возможной прокладки
-                                трассы
+                                {{ __('horizon.3.4') }}
                             </li>
                             <li class="text">
-                                Создание оптимальных маршрутов для выбранных параметров
+                                {{ __('horizon.3.5') }}
                             </li>
                             <li class="text">
-                                Минимизация возможности возникновения ошибок проектирования,
-                                связанных с человеческим фактором
+                                {{ __('horizon.3.6') }}
                             </li>
                             <li class="text">
-                                Автоматический расчёт стоимости строительства
+                                {{ __('horizon.3.7') }}
                             </li>
                             <li class="text">
-                                Возможность проверки плана, созданного инженером в ручном
-                                режиме
+                                {{ __('horizon.3.8') }}
                             </li>
-                            <li class="text">Возможность масштабирования системы</li>
+                            <li class="text">{{ __('horizon.3.9') }}</li>
                         </ul>
                         <div class="benefits__img">
                             <picture>
@@ -189,7 +198,7 @@
                 <div class="about__container">
                     <h2 class="about__title title title_line wow animate__fadeInUp" data-watch-threshold="1"
                         data-watch-once data-watch>
-                        Подробнее о нашем комплексе
+                        {{ __('horizon.4.title') }}
                     </h2>
                     <div class="about__inner wow animate__fadeIn">
                         <div class="about__video">
@@ -219,24 +228,22 @@
                         </div>
                         <div class="about__content content-about">
                             <h3 class="content-about__title title title_h3">
-                                В результате работы системы вы&nbsp;получаете:
+                                {{ __('horizon.4.1') }}
                             </h3>
                             <div class="content-about__items">
                                 <div class="about-item">
                                     <div class="about-item__text text">
-                                        Создание предварительного маршрута, который содержит
-                                        предварительную оценку и&nbsp;план проходки геодезистов
+                                        {{ __('horizon.4.2') }}
                                     </div>
                                 </div>
                                 <div class="about-item">
                                     <div class="about-item__text text">
-                                        Детальный маршрут с планом и&nbsp;схемой прокладки трассы
+                                        {{ __('horizon.4.3') }}
                                     </div>
                                 </div>
                                 <div class="about-item">
                                     <div class="about-item__text text">
-                                        Формирование ключевых документов для разрешения
-                                        на&nbsp;строительство
+                                        {{ __('horizon.4.4') }}
                                     </div>
                                 </div>
                             </div>
@@ -248,17 +255,15 @@
                 <div class="variants__container">
                     <div class="variants__title title title_line wow animate__fadeInUp" data-watch-threshold="1"
                         data-watch-once data-watch>
-                        Варианты внедрения
+                        {{ __('horizon.5.title') }}
                     </div>
                     <div class="variants__items wow animate__fadeIn">
                         <div class="variant">
                             <div class="variant__title title title_h3">
-                                Как интеграция в&nbsp;существующую систему
+                                {{ __('horizon.5.1') }}
                             </div>
                             <div class="variant__text text">
-                                При интеграции ГОРИЗОНТа в ГИС заказчика, обмен данными
-                                происходит по API. Передаваемые в ГОРИЗОНТ данные содержат
-                                карты и параметры заявок на проектирование новых сетей.
+                                {{ __('horizon.5.2') }}
                             </div>
                             <div class="variant__icon">
                                 <img src="/horizon-dir/img/icons/variants/01.svg" alt="Image" />
@@ -266,12 +271,10 @@
                         </div>
                         <div class="variant">
                             <div class="variant__title title title_h3">
-                                Как автономное решение
+                                {{ __('horizon.5.3') }}
                             </div>
                             <div class="variant__text text">
-                                При поставке автономного решения, мы предлагаем независимую
-                                систему с собственным интерфейсом пользователя и инструментами
-                                импорта-экспорта данных.
+                                {{ __('horizon.5.4') }}
                             </div>
                             <div class="variant__icon">
                                 <img src="/horizon-dir/img/icons/variants/02.svg" alt="Image" />
@@ -286,17 +289,16 @@
                 <div class="footer-form__container">
                     <div class="footer-form__col">
                         <div class="footer__title title title_h2">
-                            Заинтересовал наш Комплекс?
+                            {{ __('horizon.footer.1') }}
                         </div>
                         <div class="footer__text">
-                            Оставьте заявку и&nbsp;наши менеджеры проконсультируют вас по
-                            любому вопросу или&nbsp;напишите на&nbsp;почту
+                            {{ __('horizon.footer.2') }}
                         </div>
                         <a href="mailto:horizon@sudo.team" class="footer__mail title title_h3">
                             horizon@sudo.team
                         </a>
                         <a href="" class="footer__btn button button_outline _icon-arrow">
-                            Скачать презентацию
+                            {{ __('horizon.footer.3') }}
                         </a>
                     </div>
                     <div class="footer-form__col">
@@ -304,19 +306,18 @@
 							@csrf
                             <div class="form__line">
                                 <input class="form__input input" autocomplete="off" type="text" name="name"
-                                    placeholder="Имя*" required />
+                                    placeholder="{{ __('horizon.footer.name') }}*" required />
                             </div>
                             <div class="form__line">
                                 <input class="form__input input" autocomplete="off" type="text" name="phone"
-                                    placeholder="Телефон*" required />
+                                    placeholder="{{ __('horizon.footer.phone') }}*" required />
                             </div>
                             <div class="form__line">
                                 <button class="form__button button _icon-arrow" id="form__button" type="submit">
-                                    Оставить заявку
+                                    {{ __('horizon.footer.4') }}
                                 </button>
                                 <div class="form__agree">
-                                    Нажимая кнопку “Оставить заявку” вы соглашаетесь на
-                                    обработку персональных данных
+                                    {{ __('horizon.footer.5') }}
                                 </div>
                             </div>
                         </form>
@@ -328,29 +329,29 @@
                     <ul class="footer-menu">
                         <li class="footer-menu__item">
                             <a href="" class="footer-menu__link" data-goto-header
-                                data-goto=".functions">Функционал</a>
+                                data-goto=".functions">{{ __('horizon.footer.6') }}</a>
                         </li>
                         <li class="footer-menu__item">
                             <a href="" class="footer-menu__link" data-goto-header
-                                data-goto=".benefits">Преимущества</a>
+                                data-goto=".benefits">{{ __('horizon.footer.7') }}</a>
                         </li>
                         <li class="footer-menu__item">
                             <a href="" class="footer-menu__link" data-goto-header
-                                data-goto=".about">Подробнее</a>
+                                data-goto=".about">{{ __('horizon.footer.8') }}</a>
                         </li>
                         <li class="footer-menu__item">
                             <a href="" class="footer-menu__link" data-goto-header
-                                data-goto=".variants">Варианты внедрения</a>
+                                data-goto=".variants">{{ __('horizon.footer.9') }}</a>
                         </li>
                         <li class="footer-menu__item">
                             <a href="" class="footer-menu__link" data-goto-header
-                                data-goto=".footer">Контакты</a>
+                                data-goto=".footer">{{ __('horizon.footer.10') }}</a>
                         </li>
                     </ul>
                     <div class="footer-info">
-                        <a href="" class="footer-info__item footer-link">Политика конфиденциальности</a>
+                        <a href="" class="footer-info__item footer-link">{{ __('horizon.footer.11') }}</a>
                         <div class="footer-info__item footer-info__text">
-                            2024 © ГОРИЗОНТ
+                            {{ __('horizon.footer.12') }}
                         </div>
                     </div>
                 </div>
@@ -365,10 +366,10 @@
                     <div class="success-popup">
                         <div class="success-popup__info">
                             <div class="success-popup__title title title_line">
-                                Спасибо за вашу заявку
+                                {{ __('horizon.popup.1') }}
                             </div>
                             <div class="success-popup__text text">
-                                Наш менеджер свяжется с вами в&nbsp;ближайшее время
+                                {{ __('horizon.popup.2') }}
                             </div>
                         </div>
                         <div class="success-popup__img -ibg">

@@ -42,7 +42,6 @@
             <i class="icon-search"></i>
         </button>
         <div class="header__lang lang">
-            {{-- <button class="lang__btn">{{ strtoupper(app()->getLocale()) }}<i class="icon-arrow-bootom"></i></button> --}}
 			@php
 				if (app()->getLocale() === 'en') {
 					$lang = 'ru';
@@ -53,11 +52,6 @@
 			<a href="{{ route('language', $lang) }}">
 				{{ strtoupper($lang) }}
 			</a>
-            {{-- <ul class="lang__list">
-                <li>
-					
-				</li>
-            </ul> --}}
         </div>
 
         <div class="header__search search">
