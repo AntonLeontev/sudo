@@ -105,8 +105,8 @@ class PublicationResource extends Resource
             'description_ru' => ['nullable', 'string', 'max:1000'],
             'description_en' => ['nullable', 'string', 'max:1000'],
             'journal' => ['nullable', 'string', 'max:255'],
-            'button_link' => ['nullable', 'string', 'max:255'],
-            'title_link' => ['nullable', 'string', 'max:255'],
+            'button_link' => ['nullable', 'string', 'max:1000'],
+            'title_link' => ['nullable', 'string', 'max:1000'],
             'date' => ['nullable', 'date'],
         ];
     }
