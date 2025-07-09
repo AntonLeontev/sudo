@@ -43,18 +43,18 @@ class Publication extends Model
             }
         });
 
-        static::updated(function (Publication $publication) {
-            if (Publication::where('position', $publication->position)->exists()) {
-                Publication::where('position', '>=', $publication->position)
-                    ->whereNot('id', $publication->id)
-                    ->get(['position', 'id'])
-                    ->reduce(function (int $position, Publication $pub) {
-                        $pub->position = $position + 1;
-                        $pub->saveQuietly();
+        // static::updated(function (Publication $publication) {
+        //     if (Publication::where('position', $publication->position)->exists()) {
+        //         Publication::where('position', '>=', $publication->position)
+        //             ->whereNot('id', $publication->id)
+        //             ->get(['position', 'id'])
+        //             ->reduce(function (int $position, Publication $pub) {
+        //                 $pub->position = $position + 1;
+        //                 $pub->saveQuietly();
 
-                        return $pub->position;
-                    }, $publication->position);
-            }
-        });
+        //                 return $pub->position;
+        //             }, $publication->position);
+        //     }
+        // });
     }
 }

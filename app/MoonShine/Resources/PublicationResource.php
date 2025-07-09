@@ -24,7 +24,7 @@ class PublicationResource extends Resource
 
     public static string $title = 'Публикации';
 
-    public static string $orderField = 'position'; // Поле сортировки по умолчанию
+    public static string $orderField = 'date'; // Поле сортировки по умолчанию
 
     public static string $orderType = 'ASC'; // Тип сортировки по умолчанию
 
@@ -44,7 +44,8 @@ class PublicationResource extends Resource
                             Column::make([
                                 Number::make('Позиция', 'position')
                                     ->default(Publication::orderByDesc('position')->first('position')?->position + 1)
-                                    ->sortable(),
+                                    ->sortable()
+                                    ->hideOnIndex(),
                             ])->columnSpan(6),
                             Column::make([
                                 Date::make('Дата публикации', 'date')
@@ -107,7 +108,7 @@ class PublicationResource extends Resource
             'journal' => ['nullable', 'string', 'max:255'],
             'button_link' => ['nullable', 'string', 'max:1000'],
             'title_link' => ['nullable', 'string', 'max:1000'],
-            'date' => ['nullable', 'date'],
+            'date' => ['required', 'date'],
         ];
     }
 
