@@ -84,6 +84,17 @@
     }
 }
 
+@media (min-width: 1921px) { 
+    .about {
+        background-size: calc(1440px - 300px) 519px;
+        background-position: calc((100vw - 1440px) / 2 + 300px) 0;
+        margin-bottom: 0!important;
+        .container {
+            padding-bottom: 0;
+        }
+    }
+}
+
 .about__experts {
     margin-bottom: 50px;
     h3 {

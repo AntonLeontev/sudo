@@ -41,6 +41,14 @@
     }
 }
 
+@media (min-width: 1921px) { 
+    .publications {
+        background-size: calc(1440px - 350px) 519px;
+        background-position: calc((100vw - 1440px) / 2 + 350px) 0;
+        margin-bottom: 0!important;
+    }
+}
+
 .jc-sta div:first-child {
     justify-content: flex-start;
 }

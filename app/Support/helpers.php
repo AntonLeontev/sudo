@@ -33,7 +33,7 @@ if (! function_exists('publications')) {
         }
 
         $publications = Publication::query()
-            ->orderBy('date', 'asc')
+            ->orderBy('date', 'desc')
             ->get();
 
         cache(['publications' => $publications]);
