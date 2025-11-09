@@ -4,6 +4,7 @@
 	$title = 'title_' . app()->getLocale();
 	$author = 'author_' . app()->getLocale();
 	$description = 'description_' . app()->getLocale();
+	$journal = 'journal_' . app()->getLocale();
 @endphp
 
 <article class="publications__block">
@@ -17,8 +18,8 @@
 				{{ $publication->{$title} }}
 			</a>
 		@endif
-		@if (! empty($publication->journal))
-			<div class="mt-2 fs-6">{{ $publication->journal }}</div>
+		@if (! empty($publication->{$journal}))
+			<div class="mt-2 fs-6">{{ $publication->{$journal} }}</div>
 		@endif
     </div>
     <div class="publications__block-2">

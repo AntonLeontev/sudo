@@ -53,8 +53,6 @@ class PublicationResource extends Resource
                             ])->columnSpan(6),
                         ]),
 
-                        Text::make('Журнал или конференция', 'journal'),
-
                         Url::make('Ссылка кнопки', 'button_link')
                             ->expansion('url')
                             ->copy()
@@ -75,6 +73,7 @@ class PublicationResource extends Resource
                             Tab::make('Русский', [
                                 Text::make('Заголовок', 'title_ru'),
                                 Text::make('Автор', 'author_ru'),
+                                Text::make('Журнал или конференция', 'journal_ru'),
                                 TinyMce::make('Описание', 'description_ru')
                                     ->plugins('link lists fullscreen wordcount table preview')
                                     ->toolbar('undo redo | blocks fontsize | alignleft aligncenter alignright | bold italic underline | link | bullist numlist')
@@ -83,6 +82,7 @@ class PublicationResource extends Resource
                             Tab::make('English', [
                                 Text::make('Заголовок на английском', 'title_en')->hideOnIndex(),
                                 Text::make('Автор на английском', 'author_en')->hideOnIndex(),
+                                Text::make('Журнал или конференция на английском', 'journal_en')->hideOnIndex(),
                                 TinyMce::make('Описание на английском', 'description_en')
                                     ->plugins('link lists fullscreen wordcount table preview')
                                     ->toolbar('undo redo | blocks fontsize | alignleft aligncenter alignright | bold italic underline | link | bullist numlist')
@@ -105,7 +105,8 @@ class PublicationResource extends Resource
             'author_en' => ['nullable', 'string', 'max:255'],
             'description_ru' => ['nullable', 'string', 'max:1000'],
             'description_en' => ['nullable', 'string', 'max:1000'],
-            'journal' => ['nullable', 'string', 'max:255'],
+            'journal_en' => ['nullable', 'string', 'max:255'],
+            'journal_ru' => ['nullable', 'string', 'max:255'],
             'button_link' => ['nullable', 'string', 'max:1000'],
             'title_link' => ['nullable', 'string', 'max:1000'],
             'date' => ['required', 'date'],
