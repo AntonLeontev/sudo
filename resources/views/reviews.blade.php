@@ -24,7 +24,20 @@
                     <div class="flex-mob justify-content-end-dest">
                         <picture>
                             <source srcset="{{ Vite::asset('resources/images/jpg/reviews.png') }}" media="(min-width: 900px)">
-                            <img src="{{ Vite::asset('resources/images/jpg/reviews.png') }}" alt="фото">
+                            <img src="{{ Vite::asset('resources/images/jpg/reviews.png') }}" alt="Отзыв ФГУП ВНИИ им. Д.И. Менделеева">
+                        </picture>
+                    </div>
+                </div>
+            </div>
+            <div class="block-3-7 jc-star mb-28 flex-direction-column-table flex-direction-row-dest align-items-center-mob align-items-start-dest">
+                <div>
+                    <h3 class="title-h3 mb-28">{{ __('reviews.2') }}</h3>
+                </div>
+                <div>
+                    <div class="flex-mob justify-content-end-dest">
+                        <picture>
+                            <source srcset="{{ Vite::asset('resources/images/jpg/reviews2.webp') }}" media="(min-width: 900px)">
+                            <img src="{{ Vite::asset('resources/images/jpg/reviews2.webp') }}" alt="Отзыв ООО «ЮНИСИСТЕМС»">
                         </picture>
                     </div>
                 </div>
