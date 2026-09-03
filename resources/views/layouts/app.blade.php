@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="yandex-verification" content="66839304bb069712" />
+    <meta name="google-site-verification" content="X3YkZLEKpECE4J9RresyeYQ_9kRDUCDs9FFgti2xGvI" />
     <title>@yield('title') | Sudo</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
