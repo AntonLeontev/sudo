@@ -32,6 +32,16 @@
             </div>
         </section>
 
+        @if (slides()->isNotEmpty())
+			<div class="ps-100 container">
+				<x-home-page-slider>
+					@foreach (slides() as $slide)
+						<x-home-page-slider.slide :$slide :position="$loop->iteration" :total="$loop->count" />
+					@endforeach
+				</x-home-page-slider>
+			</div>
+		@endif
+
         <section class="card-box index-about ps-40">
             <div class="index-about__wrap">
                 <div class="index-about__block-one">
@@ -48,16 +58,6 @@
                 </div>
             </div>
         </section>
-
-		@if (slides()->isNotEmpty())
-			<div class="ps-100 container">
-				<x-home-page-slider>
-					@foreach (slides() as $slide)
-						<x-home-page-slider.slide :$slide :position="$loop->iteration" :total="$loop->count" />
-					@endforeach
-				</x-home-page-slider>
-			</div>
-		@endif
 
         <section class="card-box index-benefits ps-40">
             <div class="index-benefits__block container">
